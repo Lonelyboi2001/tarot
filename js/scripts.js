@@ -1,785 +1,785 @@
-const rider_waite_cards =
+const rider_waite_cards=
 [
-  {
-    name:'The Fool',
-    number: 0,
-    img: 'img/deck/00_Fool.jpg',
-    orientation: [],
-    meta_description: `The Fool represents new beginnings, having faith in the future, being inexperienced, not knowing what to expect, having beginner's luck, improvisation and believing in the universe.`,
-    meta_upright: `Beginnings, innocence, spontaneity, a free spirit`,
-    meta_reversed: `Holding back, recklessness, risk-taking`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/fool/`
-  },
-  {
-    name:'The Magician',
-    number: 1,
-    img: 'img/deck/01_Magician.jpg',
-    orientation: [],
-    meta_description: `When the Magician appears in a spread, it points to the talents, capabilities and resources at the querent's disposal to succeed. The message is to tap into one's full potential rather than holding back, especially when there is a need to transform something.`,
-    meta_upright: `Manifestation, resourcefulness, power, inspired action`,
-    meta_reversed: `Manipulation, poor planning, untapped talents`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/magician/`
-  },
-  {
-    name: 'The High Priestess',
-    number: 2,
-    img: `img/deck/02_High_Priestess.jpg`,
-    orientation: [],
-    meta_description: `High Priestess is a card of mystery, stillness and passivity. This card suggests that it is time to retreat and reflect upon the situation and trust your inner instincts to guide you through it. Things around you are not what they appear to be right now.`,
-    meta_upright: `Intuition, sacred knowledge, divine feminine, the subconscious mind`,
-    meta_reversed: `Secrets, disconnected from intuition, withdrawal and silence`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/high-priestess/`
-  },
-  {
-    name: 'The Empress',
-    number: 3,
-    img: `img/deck/03_Empress.jpg`,
-    orientation: [],
-    meta_description: `The Empress is traditionally associated with maternal influence, it is the card if you are hoping to start a family. She can represent the creation of life, romance, art, or new business.`,
-    meta_upright: `Femininity, beauty, nature, nurturing, abundance`,
-    meta_reversed: `Creative block, dependence on others`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/empress/`
-  },
-  {
-    name: 'The Emperor',
-    number: 4,
-    img: `img/deck/04_Emperor.jpg`,
-    orientation: [],
-    meta_description: `This card is suggestive of stability and security in life. You are on top of things and everything in under your control. It is your hard work, discipline and self control that have bought you this far. It means that you are in charge of your life now setting up your own rules and boundaries.`,
-    meta_upright: `Authority, establishment, structure, a father figure`,
-    meta_reversed: `Domination, excessive control, lack of discipline, inflexibility`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/emperor/`
-  },
-  {
-    name: 'The Hierophant',
-    number: 5,
-    img: `img/deck/05_Hierophant.jpg`,
-    orientation: [],
-    meta_description: `Hierophant stands for tradition and convention. It can represent marriage in an arranged setup. It can also mean a teacher or counsellor who will help in learning / education of the querent.`,
-    meta_upright: `Spiritual wisdom, religious beliefs, conformity, tradition, institutions`,
-    meta_reversed: `Personal beliefs, freedom, challenging the status quo`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/hierophant/`
-  },
-  {
-    name: `The Lovers`,
-    number: 6,
-    img: `img/deck/06_Lovers.jpg`,
-    orientation: [],
-    meta_description: `The Lovers represent relationships and choices. Its appearance in a spread indicates some decision about an existing relationship, a temptation of the heart, or a choice of potential partners. Often an aspect of the querent's life will have to be sacrificed; a bachelor(ette)'s lifestyle may be sacrificed and a relationship gained (or vice versa), or one potential partner may be chosen while another is turned down. Whatever the choice, it should not be made lightly, as the ramifications will be lasting.`,
-    meta_upright: `Love, harmony, relationships, values alignment, choices`,
-    meta_reversed: `Self-love, disharmony, imbalance, misalignment of values`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/lovers/`
-  },
-  {
-    name: `The Chariot`,
-    number: 7,
-    img: `img/deck/07_Chariot.jpg`,
-    orientation: [],
-    meta_description: `The Chariot is a card about overcoming conflicts and moving forward in a positive direction. One needs to keep going on and through sheer hard work and commitment he will be victorious.`,
-    meta_upright: `Control, willpower, success, action, determination`,
-    meta_reversed: `Self-discipline, opposition, lack of direction`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/chariot/`
-  },
-  {
-    name: `Strength`,
-    number: 8,
-    img: `img/deck/08_Strength.jpg`,
-    orientation: [],
-    meta_description: `Strength predicts the triumphant conclusion to a major life problem, situation or temptation through strength of character. It is a very happy card if you are fighting illness or recovering from injury.`,
-    meta_upright: `Strength, courage, persuasion, influence, compassion`,
-    meta_reversed: `Inner strength, self-doubt, low energy, raw emotion.`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/strength/`
-  },
-  {
-    name: `The Hermit`,
-    number: 9,
-    img: `img/deck/09_Hermit.jpg`,
-    orientation: [],
-    meta_description: `The Hermit suggests that you are in a phase of introspection where you are drawing your attention inwards and looking for answers within. You are in need of a period of inner reflection, away from the current demands of your position.`,
-    meta_upright: `Soul-searching, introspection, being alone, inner guidance`,
-    meta_reversed: `Isolation, loneliness, withdrawal`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/hermit/`
-  },
-  {
-    name: `The Wheel of Fortune`,
-    number: 10,
-    img: `img/deck/10_Wheel_of_Fortune.jpg`,
-    orientation: [],
-    meta_description: `A common aspect to most interpretations of this card within a reading is to introduce an element of change in the querent's life, such change being in station, position or fortune: such as the rich becoming poor, or the poor becoming rich.`,
-    meta_upright: `Good luck, karma, life cycles, destiny, a turning point`,
-    meta_reversed: `Bad luck, resistance to change, breaking cycles`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/wheel-of-fortune/`
-  },
-  {
-    name: `Justice`,
-    number: 11,
-    img: `img/deck/11_Justice.jpg`,
-    orientation: [],
-    meta_description: `The Justice card indicates that the fairest decision will be made. Justice is the sword that cuts through a situation, and will not be swayed by outer beauty when deciding what is fair and just.`,
-    meta_upright: `Justice, fairness, truth, cause and effect, law`,
-    meta_reversed: `Unfairness, lack of accountability, dishonesty`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/justice/`
-  },
-  {
-    name: `The Hanged Man`,
-    number: 12,
-    img: `img/deck/12_Hanged_Man.jpg`,
-    orientation: [],
-    meta_description: `The Hanged Man is the card that suggests ultimate surrender, sacrifice, or being suspended in time.`,
-    meta_upright: `Pause, surrender, letting go, new perspectives`,
-    meta_reversed: `Delays, resistance, stalling, indecision`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/hanged-man/`
-  },
-  {
-    name: `Death`,
-    number: 13,
-    img: `img/deck/13_Death.jpg`,
-    orientation: [],
-    meta_description: `It is very unlikely that this card actually represents a physical death. Typically it implies an end, possibly of a relationship or interest, and therefore implies an increased sense of self-awareness.`,
-    meta_upright: `Endings, change, transformation, transition`,
-    meta_reversed: `Resistance to change, personal transformation, inner purging`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/death/`
-  },
-  {
-    name: `Temperance`,
-    number: 14,
-    img: `img/deck/14_Temperance.jpg`,
-    orientation: [],
-    meta_description: `This card indicates that you should learn to bring about balance, patience and moderation in your life. You should take the middle road, avoiding extremes and maintain a sense of calm.`,
-    meta_upright: `Balance, moderation, patience, purpose`,
-    meta_reversed: `Imbalance, excess, self-healing, re-alignment`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/temperance/`
-  },
-  {
-    name: `The Devil`,
-    number: 15,
-    img: `img/deck/15_Devil.jpg`,
-    orientation: [],
-    meta_description: `It represents being seduced by the material world and physical pleasures. Also living in fear, domination and bondage, being caged by an overabundance of luxury, discretion should be used in personal and business matters.`,
-    meta_upright: `Shadow self, attachment, addiction, restriction, sexuality`,
-    meta_reversed: `Releasing limiting beliefs, exploring dark thoughts, detachment`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/devil/`
-  },
-  {
-    name: `The Tower`,
-    number: 16,
-    img: `img/deck/16_Tower.jpg`,
-    orientation: [],
-    meta_description: `The Tower is commonly interpreted as meaning danger, crisis, destruction, and liberation. It is associated with sudden unforseen change.`,
-    meta_upright: `Sudden change, upheaval, chaos, revelation, awakening`,
-    meta_reversed: `Personal transformation, fear of change, averting disaster`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/tower/`
-  },
-  {
-    name: `The Star`,
-    number: 17,
-    img: `img/deck/17_Star.jpg`,
-    orientation: [],
-    meta_description: `When the Star card appears, you are likely to find yourself feeling inspired. It brings renewed hope and faith and a sense that you are truly blessed by the universe at this time.`,
-    meta_upright: `Hope, faith, purpose, renewal, spirituality`,
-    meta_reversed: `Lack of faith, despair, self-trust, disconnection`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/star/`
-  },
-  {
-    name: `The Moon`,
-    number: 18,
-    img: `img/deck/18_Moon.jpg`,
-    orientation: [],
-    meta_description: `The Moon is a card of illusion and deception, and therefore often suggests a time when something is not as it appears to be. Perhaps a misunderstanding on your part, or a truth you cannot admit to yourself.`,
-    meta_upright: `Illusion, fear, anxiety, subconscious, intuition`,
-    meta_reversed: `Release of fear, repressed emotion, inner confusion`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/moon/`
-  },
-  {
-    name: `The Sun`,
-    number: 19,
-    img: `img/deck/19_Sun.jpg`,
-    orientation: [],
-    meta_description: `The card portends good fortune, happiness, joy and harmony. It represents the universe coming together and agreeing with your path and aiding forward movement into something greater.`,
-    meta_upright: `Positivity, fun, warmth, success, vitality`,
-    meta_reversed: `Inner child, feeling down, overly optimistic`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/sun/`
-  },
-  {
-    name: `Judgement`,
-    number: 20,
-    img: `img/deck/20_Judgement.jpg`,
-    orientation: [],
-    meta_description: `This card is referred to as a time of resurrection and awakening, a time when a period of our life comes to an absolute end making way for dynamic new beginnings.`,
-    meta_upright: `Judgement, rebirth, inner calling, absolution`,
-    meta_reversed: `Self-doubt, inner critic, ignoring the call`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/judgement/`
-  },
-  {
-    name: `The World`,
-    number: 21,
-    img: `img/deck/21_World.jpg`,
-    orientation: [],
-    meta_description: `The World represents an ending to a cycle of life, a pause in life before the next big cycle beginning with the fool. It is an indicator of a major and inexorable change, of tectonic breadth.`,
-    meta_upright: `Completion, integration, accomplishment, travel`,
-    meta_reversed: `Seeking personal closure, short-cuts, delays`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/major-arcana/world/`
-  },
-  {
-    name: `The Ace of Wands`,
-    number: 22,
-    img: `img/deck/22_Ace_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `This card represents a propitious new beginning or a turn for the better. When this card appears, our optimism should be used as a guide to our dreams.`,
-    meta_upright: `Inspiration, power, creation, beginnings, potential`,
-    meta_reversed: `Delays, lack of motivation, weighed down`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/ace-of-wands/`
-  },
-  {
-    name: `The Two of Wands`,
-    number: 23,
-    img: `img/deck/23_Two_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `The Two of Wands is a close relative of it's preceding card, the Ace of Wands. Here, instead of focusing on your unbridled enthusiasm for a new pursuit, a focus on careful consideration and planning is called for.`,
-    meta_upright: `Future planning, progress, decisions, discovery`,
-    meta_reversed: `Fear of unknown, lack of planning`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/two-of-wands/`
-  },
-  {
-    name: `The Three of Wands`,
-    number: 24,
-    img: `img/deck/24_Three_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `The card indicates that the planning we've made for our future is considerate and serious. The serious time we've spent in preparation suggests a solid foundation for the future.`,
-    meta_upright: `Preparation, foresight, enterprise, expansion`,
-    meta_reversed: `Lack of foresight, delays, obstacles to long-term goals`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/three-of-wands/`
-  },
-  {
-    name: `The Four of Wands`,
-    number: 25,
-    img: `img/deck/25_Four_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `The Four of Wands heralds celebration. While it relates mostly to the smaller things in life, this card should help remind us to enjoy the small victories and harmonies in life.`,
-    meta_upright: `Celebration, harmony, marriage, home, community`,
-    meta_reversed: `Breakdown in communication, transition`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/four-of-wands/`
-  },
-  {
-    name: `The Five of Wands`,
-    number: 26,
-    img: `img/deck/26_Five_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `This card alludes to conflict in our lives, whether it be the conflict of competition or the feeling that nothing is going our way. When we draw the Five of Wands, we should remember conflicts are better addressed quickly and that patience working through them removes a great deal of the stress they cause.`,
-    meta_upright: `Disagreement, competition, strife, tension, conflict`,
-    meta_reversed: `Conflict avoidance, increased focus on goals`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/five-of-wands/`
-  },
-  {
-    name: `The Six of Wands`,
-    number: 27,
-    img: `img/deck/27_Six_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `The minor counterpart of the Chariot, the Six of Wands augurs public recognition for hard work and acheiving our goals.`,
-    meta_upright: `Public recognition, victory, progress, self-confidence`,
-    meta_reversed: `Egotism, disrepute, lack of confidence, fall from grace`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/six-of-wands/`
-  },
-  {
-    name: `The Seven of Wands`,
-    number: 28,
-    img: `img/deck/28_Seven_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `The meaning of the Seven of Wands is clear in its depiction: taking a stand. Thought not all stands are worth taking, and we should be careful to reflect on whether we've chosen the right hill to die on.`,
-    meta_upright: `Challenge, competition, perseverance`,
-    meta_reversed: `Giving up, overwhelmed, overly protective`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/seven-of-wands/`
-  },
-  {
-    name: `The Eight of Wands`,
-    number: 29,
-    img: `img/deck/29_Eight_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `Often, the Eight of Wands is a sign that we are ready to confront the challenges facing us. It also may indicate that important news may soon arrive.`,
-    meta_upright: `Speed, action, air travel, movement, swift change`,
-    meta_reversed: `Delays, frustration, holding off`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/eight-of-wands/`
-  },
-  {
-    name: `The Nine of Wands`,
-    number: 30,
-    img: `img/deck/30_Nine_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `The character in the card's portrait cuts a weary figure, and the meaning of the card derives from both of this word's meanings. We should be careful in our approach to problems, but also feel what strength there is in <i>stamina</i> when facing our troubles.`,
-    meta_upright: `Courage, persistence, test of faith, resilience`,
-    meta_reversed: `On edge, defensive, hesitant, paranoia`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/nine-of-wands/`
-  },
-  {
-    name: `The Ten of Wands`,
-    number: 31,
-    img: `img/deck/31_Ten_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `The Ten of Wands is all about responsibility. The figure in the card's portrait struggles with a heavy load, indicating that we may be trying to do too much. It might also indicate that soon we will assume more responsibility than we are used to.`,
-    meta_upright: `Burden, responsibility, hard work, stress, achievement`,
-    meta_reversed: `Taking on too much, avoiding responsibility`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/ten-of-wands/`
-  },
-  {
-    name: `The Page of Wands`,
-    number: 32,
-    img: `img/deck/32_Page_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `The Page of Wands is the harbinger of unencumbered passions, the spark in us that leads to creative explosions, and child-like wonder in the face of new ideas. This card should give us courage in pursuing long-debated creative ideas, and permission to be at our most whimiscal.`,
-    meta_upright: `Enthusiasm, exploration, discovery, free spirit`,
-    meta_reversed: `Setbacks to new ideas, pessimism, lack of direction`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/page-of-wands/`
-  },
-  {
-    name: `The Knight of Wands`,
-    number: 33,
-    img: `img/deck/33_Knight_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `THe Knight of Wands is cocky and adventerous, but there is always a time and place for boldness. We should consider whether we are rushing in our pursuits, and if our unbridled confidence is helping or harming us.`,
-    meta_upright: `Energy, passion, lust, action, adventure, impulsiveness`,
-    meta_reversed: `Haste, scattered energy, delays, frustration`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/knight-of-wands/`
-  },
-  {
-    name: `The Queen of Wands`,
-    number: 34,
-    img: `img/deck/34_Queen_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `This Queen is suffused with all the enchantment of the suit of wands. She asks us to emulate her, bringing her belief, grace, charm, and steadfastness to the inward aspects of our own lives.`,
-    meta_upright: `Exuberance, warmth, vibrancy, determination`,
-    meta_reversed: `Shrinking violet, aggressive, demanding`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/queen-of-wands/`
-  },
-  {
-    name: `The King of Wands`,
-    number: 35,
-    img: `img/deck/35_King_of_Wands.jpg`,
-    orientation: [],
-    meta_description: `This King is suffused with creative vigor and drama. He asks us to emulate him, bringing his confidence, belief, and assuredness to our pursuits in life.`,
-    meta_upright: `Natural-born leader, vision, entrepreneur, honour`,
-    meta_reversed: `Impulsiveness, haste, ruthless, high expectations`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-wands/king-of-wands/`
-  },
-  {
-    name: `The Ace of Pentacles`,
-    number: 36,
-    img: `img/deck/36_Ace_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `This card show prosperity and comfortable material conditions, but whether these are of advantage to the possessor will depend on whether the card is reversed or not. -A.E. Waite`,
-    meta_upright: `A new financial or career opportunity, manifestation, abundance`,
-    meta_reversed: `Lost opportunity, lack of planning and foresight`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/ace-of-pentacles/`
-  },
-  {
-    name: `The Two of Pentacles `,
-    number: 37,
-    img: `img/deck/37_Two_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `On the one hand it is a card of fun, recreation and its connections, which is the subject of the design; but it is read also as news and messages in writing, as obstacles, agitation, trouble, embroilment. -A.E. Waite `,
-    meta_upright: `Multiple priorities, time management, prioritisation, adaptability`,
-    meta_reversed: `Over-committed, disorganisation, reprioritisation`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/two-of-pentacles/`
-  },
-  {
-    name: `The Three of Pentacles`,
-    number: 38,
-    img: `img/deck/38_Three_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `Métier, trade, skilled labour; usually, however, regarded as a card of nobility, aristocracy, renown, glory.  -A.E. Waite`,
-    meta_upright: `Teamwork, collaboration, learning, implementation`,
-    meta_reversed: `Disharmony, misalignment, working alone`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/three-of-pentacles/`
-  },
-  {
-    name: `The Four of Pentacles`,
-    number: 39,
-    img: `img/deck/39_Four_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `This card suggest the surety of possessions, cleaving to that which one has, gift, legacy, inheritance.  -A.E. Waite`,
-    meta_upright: `Saving money, security, conservatism, scarcity, control`,
-    meta_reversed: `Over-spending, greed, self-protection`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/four-of-pentacles/`
-  },
-  {
-    name: `The Five of Pentacles`,
-    number: 40,
-    img: `img/deck/40_Five_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `This card foretells material trouble above all, whether in the form illustrated--that is, destitution--or otherwise. For some cartomancists, it is a card of love and lovers-wife, husband, friend, mistress; also concordance, affinities. These alternatives cannot be harmonized.  -A.E. Waite`,
-    meta_upright: `Financial loss, poverty, lack mindset, isolation, worry`,
-    meta_reversed: `Recovery from financial loss, spiritual poverty`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/five-of-pentacles/`
-  },
-  {
-    name: `The Six of Pentacles`,
-    number: 41,
-    img: `img/deck/41_Six_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `The Six of Pentacles represents presents, gifts, and gratification. Another account says the card calls for attention, vigilance, or that now is the accepted time, but especially present prosperity  -A.E. Waite`,
-    meta_upright: `Giving, receiving, sharing wealth, generosity, charity`,
-    meta_reversed: `Self-care, unpaid debts, one-sided charity`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/six-of-pentacles/`
-  },
-  {
-    name: `The Seven of Pentacles`,
-    number: 42,
-    img: `img/deck/42_Seven_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `A young man, leaning on his staff, looks intently at seven pentacles attached to a clump of greenery on his right; one would say that these were his treasures and that his heart was there. The meanings in this card are exceedingly contradictory; in the main, it is a card of money, business, barter; but one reading gives altercation, quarrels--and another innocence, ingenuity, and purgation.  -A.E. Waite `,
-    meta_upright: `Long-term view, sustainable results, perseverance, investment`,
-    meta_reversed: `Lack of long-term vision, limited success or reward`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/seven-of-pentacles/`
-  },
-  {
-    name: `The Eight of Pentacles`,
-    number: 43,
-    img: `img/deck/43_Eight_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `The man at work depicted in the card represents a kind of gain different from most of the Pentacle suit. Here, the man toils at his craft, not for financial benefit (though it may come!) but for love of the craft and pursuit of mastery. We should see this card as an encouraging sign in our worklives or personal creative pursuits.`,
-    meta_upright: `Apprenticeship, repetitive tasks, mastery, skill development`,
-    meta_reversed: `Self-development, perfectionism, misdirected activity`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/eight-of-pentacles/`
-  },
-  {
-    name: `The Nine of Pentacles`,
-    number: 44,
-    img: `img/deck/44_Nine_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `The Nine of Pentacles augurs a good turn after a period of intensely hard work. A great financial boon may be coming, or it might just be that respite may soon be ours.`,
-    meta_upright: `Abundance, luxury, self-sufficiency, financial independence`,
-    meta_reversed: `Self-worth, over-investment in work, hustling`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/nine-of-pentacles/`
-  },
-  {
-    name: `The Ten of Pentacles`,
-    number: 45,
-    img: `img/deck/45_Ten_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `The Ten of Pentacles indicates great stability in our financial and emotional lives. We should never forget, as the card shows us, that this stability is never the work of one person alone, but of a community, familial and otherwise.`,
-    meta_upright: `Wealth, financial security, family, long-term success, contribution`,
-    meta_reversed: `The dark side of wealth, financial failure or loss`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/ten-of-pentacles/`
-  },
-  {
-    name: `The Page of Pentacles`,
-    number: 46,
-    img: `img/deck/46_Page_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `This Page brings tidings of our abilities to experience financial stability, wealth, and stability--all the promise of the Pentacles suit. `,
-    meta_upright: `Manifestation, financial opportunity, skill development`,
-    meta_reversed: `Lack of progress, procrastination, learn from failure`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/page-of-pentacles/`
-  },
-  {
-    name: `The Knight of Pentacles`,
-    number: 47,
-    img: `img/deck/47_Knight_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `As with all Knights, the Knight of Pentacles represents a Janian prospect. He invites us to examine the differences between diligent work and grinding, prudence and depravation. Which is more accurate in describing our lives and actions?`,
-    meta_upright: `Hard work, productivity, routine, conservatism`,
-    meta_reversed: `Self-discipline, boredom, feeling ‘stuck’, perfectionism`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/knight-of-pentacles/`
-  },
-  {
-    name: `The Queen of Pentacles`,
-    number: 48,
-    img: `img/deck/48_Queen_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `The Queen of Pentacles is a shrewd, but nurturing figure. Her affairs are in order, which allows her to better care for those that she loves. When we draw the Queen of Pentacles, we should find the figure in our lives (be it ourselves or a relation) who most emulates her. If it is ourselves, we are invited to embody her character. Perhaps those around us need extra attention, and we should be willing to provide it.`,
-    meta_upright: `Nurturing, practical, providing financially, a working parent`,
-    meta_reversed: `Financial independence, self-care, work-home conflict`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/queen-of-pentacles/`
-  },
-  {
-    name: `The King of Pentacles`,
-    number: 49,
-    img: `img/deck/49_King_of_Pentacles.jpg`,
-    orientation: [],
-    meta_description: `Industrious and regal, the King of Pentacles is a sign of worldly success and fruition. We should, however, note <em>how</em> the King as achieved his success. Frugal and responsible, let him remind us to remain careful in our pursuits and to never over-extend ourselves.`,
-    meta_upright: `Wealth, business, leadership, security, discipline, abundance`,
-    meta_reversed: `Financially inept, obsessed with wealth and status, stubborn`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-pentacles/king-of-pentacles/`
-  },
-  {
-    name: `The Ace of Cups`,
-    number: 50,
-    img: `img/deck/50_Ace_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `Cups are the heart's suit. The Ace of Cups tells us that love is at the heart of our current predicament. But don't worry: this card's appearance in our spread indicates our star is on the rise. We should remember that this can be agapic love, erotic love, or perhaps both. Connect with others through love in all its forms: forgiveness, compassion, empathy, affection.`,
-    meta_upright: `Love, new relationships, compassion, creativity`,
-    meta_reversed: `Self-love, intuition, repressed emotions`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/ace-of-cups/`
-  },
-  {
-    name: `The Two of Cups`,
-    number: 51,
-    img: `img/deck/51_Two_of_Cups.jpg`,
-    orientation: [],
-    meta_description:`The Two of Cups is the Minor Arcana's echo of The Lovers. It represents communion, especially between two entities, and tells us that the time for partnership is now. We should be sure not to forget that partners often create their own world, and that excising ourselves from the larger world around us is rarely a positive.`,
-    meta_upright: `Unified love, partnership, mutual attraction`,
-    meta_reversed: `Self-love, break-ups, disharmony, distrust`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/two-of-cups/`
-  },
-  {
-    name: `The Three of Cups`,
-    number: 52,
-    img: `img/deck/52_Three_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `The Three of Cups augurs comings-together and celebrations. Although more superficial than the Two of Cups, the Three of Cups does invite us to reach out and connect with others. Find your community, your family, and your relations. They are the key to your growth and healing.`,
-    meta_upright: `Celebration, friendship, creativity, collaborations`,
-    meta_reversed: `Independence, alone time, hardcore partying, ‘three’s a crowd’`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/three-of-cups/`
-  },
-  {
-    name: `The Four of Cups`,
-    number: 53,
-    img: `img/deck/53_Four_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `The Four of Cups is the mirror of the Three of Cups. Here instead of reaching out, we should spend time in deep contemplation. We are also invited to open ourselves to new possibilities: the meditator in the card's portrait stares in discontent at the cups before him, ignoring the gift offered just out of his view.`,
-    meta_upright: `Meditation, contemplation, apathy, reevaluation`,
-    meta_reversed: `Retreat, withdrawal, checking in for alignment`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/four-of-cups/`
-  },
-  {
-    name: `The Five of Cups`,
-    number: 54,
-    img: `img/deck/54_Five_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `This card represnts agonizing over the past pessimistically. The figure has lost three of his cups, but the two remaining stand out of view behind them. The bridge in the distance leads over the turbulent river, but they have not gone to cross it yet, reamining focused instead on their loss. Let this card remind us that movement is key to overcoming pain and loss, and that the bridge is always there to overcome the roiling water under the bridge.`,
-    meta_upright: `Regret, failure, disappointment, pessimism`,
-    meta_reversed: `Personal setbacks, self-forgiveness, moving on`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/five-of-cups/`
-  },
-  {
-    name: `The Six of Cups`,
-    number: 55,
-    img: `img/deck/55_Six_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `The Six of Cups invites us to rediscover our childlike wonder and idea of love. These simpler ways of thinking help to dispel the doubts that sow overly self-conscious minds. Not all motives are suspect. Sometimes love is given for its own sake.`,
-    meta_upright: `Revisiting the past, childhood memories, innocence, joy`,
-    meta_reversed: `Living in the past, forgiveness, lacking playfulness`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/six-of-cups/`
-  },
-  {
-    name: `The Seven of Cups`,
-    number: 56,
-    img: `img/deck/56_Seven_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `This is a card of conflict. Temptations are preseneted in its vision, but so too is the chance for revelation. Only you can decide if the vision is real: The head of the lover, the hooded figure inviting self-illumination, the tempting snake, the stable castle, the treasure's wealth, the victor's laurel, and the calamitous dragon.`,
-    meta_upright: `Opportunities, choices, wishful thinking, illusion`,
-    meta_reversed: `Alignment, personal values, overwhelmed by choices`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/seven-of-cups/`
-  },
-  {
-    name: `The Eight of Cups`,
-    number: 57,
-    img: `img/deck/57_Eight_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `The Eight of Cups is the card of disillusionment. The figure in the card's portrait walks away from what they previously desired toward a bleak night. This card should remind us that even if it hurts, we can always walk away from any situation. But let's not forget that poor judgment or understanding of a situation might lead us to walking away from what was right all along.`,
-    meta_upright: `Disappointment, abandonment, withdrawal, escapism`,
-    meta_reversed: `Trying one more time, indecision, aimless drifting, walking away.`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/eight-of-cups/`
-  },
-  {
-    name: `The Nine of Cups`,
-    number: 58,
-    img: `img/deck/58_Nine_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `The Nine of Cups tells us to enjoy ourselves and indulge ourselves. It's okay to be pleased with how things have gone, and savor the moments of pleasure in our days.`,
-    meta_upright: `Contentment, satisfaction, gratitude, wish come true`,
-    meta_reversed: `Inner happiness, materialism, dissatisfaction, indulgence`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/nine-of-cups/`
-  },
-  {
-    name: `The Ten of Cups`,
-    number: 59,
-    img: `img/deck/59_Ten_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `Upright, this is one of the most positive cards in the Tarot deck; reversed: one of the most calamitous. The Ten of Cups augurs contentment of the heart, and the perfection of love and friendship. It points to a healthy and positive environment, be it at home or across an entire nation.`,
-    meta_upright: `Divine love, blissful relationships, harmony, alignment`,
-    meta_reversed: `Disconnection, misaligned values, struggling relationships`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/ten-of-cups/`
-  },
-  {
-    name: `The Page of Cups`,
-    number: 60,
-    img: `img/deck/60_Page_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `This card represents a particularly beloved child, or a pursuit of the arts or learning with a childlike persistence. Let it remind us that skill and vision can be cultivated, so long as we can make the work feel not like work.`,
-    meta_upright: `Creative opportunities, intuitive messages, curiosity, possibility`,
-    meta_reversed: `New ideas, doubting intuition, creative blocks, emotional immaturity`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/page-of-cups/`
-  },
-  {
-    name: `The Knight of Cups`,
-    number: 61,
-    img: `img/deck/61_Knight_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `If the card is upright, it represents change and new excitements, particularly of a romantic nature. It can mean invitations, opportunities, and offers. The Knight of Cups is a person who is a bringer of ideas, opportunities and offers. He is constantly bored, and in constant need of stimulation, but also artistic and refined. He represents a person who is amiable, intelligent, and full of high principles, but a dreamer who can be easily persuaded or discouraged. Reversed, the card represents unreliability and recklessness. It indicates fraud, false promises and trickery. It represents a person who has trouble discerning when and where the truth ends and lies begin.`,
-    meta_upright: `Creativity, romance, charm, imagination, beauty`,
-    meta_reversed: `Overactive imagination, unrealistic, jealous, moody`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/knight-of-cups/`
-  },
-  {
-    name: `The Queen of Cups`,
-    number: 62,
-    img: `img/deck/62_Queen_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `The card's portrait shows a mature woman of fair-complexion and golden hair who holds a lidded cup or chalice. She is described as a model of loving virtue, one who is purer of heart than most, a loving mother, and a loyal friend. The inverted card may warn us of a false lover or a deceitful friend or companion who may have a secret; someone who pretends to be pure of heart but is actually treacherous and manipulative.`,
-    meta_upright: `Compassionate, caring, emotional stable, intuitive, in flow`,
-    meta_reversed: `Inner feelings, self-care, self-love, co-dependency`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/queen-of-cups/`
-  },
-  {
-    name: `The King of Cups`,
-    number: 63,
-    img: `img/deck/63_King_of_Cups.jpg`,
-    orientation: [],
-    meta_description: `The King of Cups represents a man who is favourably disposed towards us or, in a more abstract sense, refer to the arts and sciences or any sphere which involves creative intelligence. The personality of the King of Cups is a combination of the positive nurturing energy of water of the Cups suit and the active, outward focus of a King. The king of cups can be a wonderful guide and mentor as he is usually a giver of unselfish aid, albeit one who is easily angered. He cares about others sincerely and always responds to their needs with compassion. He heals with a gentle touch and a quiet word. He is usually tolerant of all points of view and shows patience in the most trying of circumstances.`,
-    meta_upright: `Emotionally balanced, compassionate, diplomatic`,
-    meta_reversed: `Self-compassion, inner feelings, moodiness, emotional manipulative`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-cups/king-of-cups/`
-  },
-  {
-    name: `The Ace of Swords`,
-    number: 64,
-    img: `img/deck/64_Ace_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `This card indicates decisive ability and cutting through confusion, taking a radical decision or standpoint and the ability to see through deception, and expose it.`,
-    meta_upright: `Raw power, victory, break-throughs, mental clarity`,
-    meta_reversed: `Confusion, chaos, lack of clarity`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/ace-of-swords/`
-  },
-  {
-    name: `The Two of Swords`,
-    number: 65,
-    img: `img/deck/65_Two_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `This is a card of meditation, not of action. The crossed swords point to different possible directions, but for the moment the character is looking inward rather than outward and in the possession of an awesome power that protects her until she finds the direction to apply it.`,
-    meta_upright: `Indecision, choices, truce, stalemate, blocked emotions`,
-    meta_reversed: `Indecision, confusion, information overload`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/two-of-swords/`
-  },
-  {
-    name: `The Three of Swords`,
-    number: 66,
-    img: `img/deck/66_Three_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `This card depicts a dreadfully sorrowful experience, be it in the form of a lost relationship, accidental death, or some other horrid malaise.`,
-    meta_upright: `Painful separation, sorrow heartbreak, grief, rejection`,
-    meta_reversed: `Releasing pain, optimism, forgiveness`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/three-of-swords/`
-  },
-  {
-    name: `The Four of Swords`,
-    number: 67,
-    img: `img/deck/67_Four_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `The single sword at the knight's side indicates a singularity of purpose and a great focus in life. It is mostly associated with a peaceful, still place. This card reflects withdrawal, getting away and shifting the focus inwardly so that recovery and healing can take place.`,
-    meta_upright: `Contemplation, recuperation, passivity, relaxation, rest`,
-    meta_reversed: `Restlessness, burn-out, lack of progress`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/four-of-swords/`
-  },
-  {
-    name: `The Five of Swords`,
-    number: 68,
-    img: `img/deck/68_Five_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `he ragged-looking and "torn-asunder" sky implies a frayed, shabby, and jagged celestial plane. This card can represent dangerous overconfidence, and in its reversed form indicates a seeming-triumph which will be ultimately calamitous.`,
-    meta_upright: `Conflict, tension, loss, defeat, win at all costs, betrayal`,
-    meta_reversed: `Open to change, past resentment`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/five-of-swords/`
-  },
-  {
-    name: `The Six of Swords`,
-    number: 69,
-    img: `img/deck/69_Six_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `This is the card of the Slough of Despairs. The figure in the card's portrait faces a difficult journey, hauling as he must the baggage of the past. Yet it is a journey that must be taken, and we should take heart that respite lies on the other side.`,
-    meta_upright: `Regretful but necessary transition, rite of passage`,
-    meta_reversed: `Cannot move on, carrying baggage`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/six-of-swords/`
-  },
-  {
-    name: `The Seven of Swords`,
-    number: 70,
-    img: `img/deck/70_Seven_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `The figure in the card's portrait looks anything but above-board. The Seven of Swords reprsents a hasty decision, greed and/or thoughtless behavior, the individual acts in an impulsive fashion. It represents secret plans, hidden dishonor, frustration and the possibility of failure.`,
-    meta_upright: `Betrayal, deception, getting away with something, stealth`,
-    meta_reversed: `Mental challenges, breaking free`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/seven-of-swords/`
-  },
-  {
-    name: `The Eight of Swords`,
-    number: 71,
-    img: `img/deck/71_Eight_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `The Eight of Swords represents a situation in which no positive move can be seen. Our position is that of the card's figure: if we move, we'll get cut. However, the ropes that bind us and the blindfold over our eyes are our own fears, keeping us immobile. Therefore, the longer we stay, the more they constrain and entrap ourselves.`,
-    meta_upright: `Isolation, self-imposed restriction, imprisonment`,
-    meta_reversed: ` Open to new perspectives, release`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/eight-of-swords/`
-  },
-  {
-    name: `The Nine of Swords`,
-    number: 72,
-    img: `img/deck/72_Nine_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `This card has a lot to do with our mind and our doubts and pain. The figure sits awake in bed, tortured by their thoughts, which hang above them. But take heart in knowing that the sharp edges of the swords mean they might also offer help: cutting through our difficulties and offering us solutions, if only they are considered properly.`,
-    meta_upright: `Depression, nightmares, intense anxiety, despair`,
-    meta_reversed: `Hopelessness, severe depression, torment`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/nine-of-swords/`
-  },
-  {
-    name: `The Ten of Swords`,
-    number: 73,
-    img: `img/deck/73_Ten_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `The Ten of Swords represents destruction, being pinned down by a multitude of things or situations. The figure lying dead and defeated represents our hopelessness and the feeling of being trapped by our emotions and mental anguish. Still, take heart from the golden dawn on the horizon: things must, eventually, take a turn for the better.`,
-    meta_upright: `Back-stabbed, defeat, crisis, betrayal, endings, loss`,
-    meta_reversed: `Recovery, regeneration, fear of ruin, inevitable end`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/ten-of-swords/`
-  },
-  {
-    name: `The Page of Swords`,
-    number: 74,
-    img: `img/deck/74_Page_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `The Swords is the suit of ideas and words. The Page of Swords represents a fearless approach to our thoughts and problems. Although the figure in the card's portrait stands against the wind, his gaze and purpose do not falter. Let us imitate him in our own challenges.`,
-    meta_upright: `Talkative, curious, mentally restless, energetic`,
-    meta_reversed: `All talk and no action, haste, undelivered promises`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/page-of-swords/`
-  },
-  {
-    name: `The Knight of Swords`,
-    number: 75,
-    img: `img/deck/75_Knight_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `The Knight of Swords is often taken to represent a confident and articulate young man, who may act impetuously. The problem is that this Knight, though visionary, is unrealistic. He fights bravely, but foolishly.`,
-    meta_upright: `Opinionated, hasty, action-oriented, communicative`,
-    meta_reversed: `Scattered thought, disregard for consequences`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/knight-of-swords/`
-  },
-  {
-    name: `The Queen of Swords`,
-    number: 76,
-    img: `img/deck/76_Queen_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `The Queen of Swords holds her hand forward, signifying putting our thoughts into action. She is a free and active thinker who holds firm to her ideas and principles. In contrast to most of her suit, the clouds in her portrait are clear and pristine, which represents her mental clarity. Let her invite us to emulate her in our own lives.`,
-    meta_upright: `Quick thinker, organised, perceptive, independent`,
-    meta_reversed: `Overly-emotional, bitchy, cold-hearted`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/queen-of-swords/`
-  },
-  {
-    name: `The King of Swords`,
-    number: 77,
-    img: `img/deck/77_King_of_Swords.jpg`,
-    orientation:[],
-    meta_description: `This card depicts a man who is strong-hearted, decisive, and intellectually oriented. Yet The King of Swords can also be a man ruthless or excessively judgmental; we are therefore advised to balance our intellectual orientation with emotional understanding.`,
-    meta_upright: `Clear thinking, intellectual power, authority, truth`,
-    meta_reversed: `Manipulative, tyrannical, abusive`,
-    meta_more_info_link: `https://www.biddytarot.com/tarot-card-meanings/minor-arcana/suit-of-swords/king-of-swords/`
-  }
+{
+ name_card:`Gã Khờ`,
+ number_card: 0,
+ img_card: `img/deck/00_Fool.jpg`,
+orientation_card:[],
+ meta_description: `The Fool đại diện cho sự khởi đầu mới, có niềm tin vào tương lai, thiếu kinh nghiệm, không biết những gì đang chờ đợi, có may rủi của người mới bắt đầu, sự ngẫu hứng và tin tưởng vào vũ trụ.`,
+ meta_upright: `Bắt đầu, ngây thơ, tự phát, tinh thần tự do`,
+ meta_reversed: `kìm hãm, chức năng, chấp nhận rủi ro `,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-fool-trong-tarot/`
+},
+{
+ name_card:`Nhà ảo thuật`,
+ number_card: 1,
+ img_card: `img/deck/01_Magician.jpg`,
+orientation_card:[],
+ meta_description: `Khi Magician xuất hiện trong một trải bài, nó chỉ ra những tài năng, khả năng và nguồn lực mà người hỏi có để thành công. Thông điệp là hãy khai thác hết tiềm năng của một người thay vì chần chừ, đặc biệt là khi cần phải chuyển đổi điều gì đó.`,
+ meta_upright: `Sự thể hiện, tháo vát, quyền lực, hành động đầy cảm hứng`,
+ meta_reversed: `Thao túng, lập kế hoạch kém, tài năng chưa được khai thác`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-magician-trong-tarot/`
+},
+{
+ name_card: `Nữ tư tế tối cao`,
+ number_card: 2,
+ img_card: `img/deck/02_High_Priestess.jpg`,
+orientation_card:[],
+ meta_description: `High Priestess là lá bài của sự bí ẩn, tĩnh lặng và thụ động. Lá bài này gợi ý rằng đã đến lúc rút lui và suy ngẫm về tình huống và tin tưởng vào bản năng bên trong của bạn để hướng dẫn bạn vượt qua nó. Mọi thứ xung quanh bạn không giống như vẻ bề ngoài của chúng lúc này.`,
+ meta_upright: `Trực giác, kiến thức thiêng liêng, nữ tính thiêng liêng, tiềm thức`,
+ meta_reversed: `Bí mật, ngắt kết nối với trực giác, rút lui và im lặng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-high-priestess-trong-tarot/`
+},
+{
+ name_card: `Hoàng hậu`,
+ number_card: 3,
+ img_card: `img/deck/03_Empress.jpg`,
+orientation_card:[],
+ meta_description: `The Empress theo truyền thống gắn liền với ảnh hưởng của người mẹ, đây là lá bài nếu bạn đang hy vọng lập gia đình. Cô ấy có thể đại diện cho sự sáng tạo của cuộc sống, sự lãng mạn, nghệ thuật hoặc công việc kinh doanh mới.`,
+ meta_upright: `Nữ tính, vẻ đẹp, tự nhiên, nuôi dưỡng, phong phú`,
+ meta_reversed: `Khối sáng tạo, lệ thuộc người khác`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-empress-trong-tarot/`
+},
+{
+ name_card: `Hoàng đế`,
+ number_card: 4,
+ img_card: `img/deck/04_Emperor.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này gợi ý về sự ổn định và an toàn trong cuộc sống. Bạn đang đứng đầu mọi thứ và mọi thứ đều nằm trong tầm kiểm soát của bạn. Chính sự chăm chỉ, kỷ luật và tự chủ của bạn đã giúp bạn đạt được thành công này. Điều đó có nghĩa là bạn đang chịu trách nhiệm về cuộc sống của mình, hiện đang thiết lập các quy tắc và ranh giới của riêng bạn.`,
+ meta_upright: `Quyền hạn, thành lập, cấu trúc, hình tượng người cha`,
+ meta_reversed: `Sự thống trị, kiểm soát quá mức, thiếu kỷ luật, không linh hoạt`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-emperor-trong-tarot/`
+},
+{
+ name_card: `Người hùng`,
+ number_card: 5,
+ img_card: `img/deck/05_Hierophant.jpg`,
+orientation_card:[],
+ meta_description: `Hierophant là viết tắt của truyền thống và quy ước. Nó có thể đại diện cho hôn nhân trong một thiết lập sắp đặt. Nó cũng có thể có nghĩa là một giáo viên hoặc cố vấn sẽ giúp đỡ trong việc học tập/giáo dục của người hỏi.`,
+ meta_upright: `Trí tuệ tâm linh, niềm tin tôn giáo, sự phù hợp, truyền thống, thể chế`,
+ meta_reversed: `Niềm tin cá nhân, tự do, thách thức hiện trạng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-hierophant-trong-tarot/`
+},
+{
+ name_card: `Người tình`,
+ number_card: 6,
+ img_card: `img/deck/06_Lovers.jpg`,
+orientation_card:[],
+ meta_description: `The Lovers đại diện cho các mối quan hệ và sự lựa chọn. Sự xuất hiện của nó trong trải bài cho thấy một số quyết định về mối quan hệ hiện tại, sự cám dỗ của trái tim hoặc sự lựa chọn đối tác tiềm năng. Thường thì một khía cạnh trong cuộc sống của người hỏi sẽ phải hy sinh; lối sống của một cử nhân (ette) có thể bị hy sinh và có được một mối quan hệ (hoặc ngược lại), hoặc một đối tác tiềm năng có thể được chọn trong khi một đối tác khác bị từ chối. Dù lựa chọn là gì, bạn không nên xem nhẹ, vì hậu quả sẽ kéo dài.`,
+ meta_upright: `Tình yêu, sự hòa hợp, các mối quan hệ, sự liên kết giá trị, sự lựa chọn`,
+ meta_reversed: `Tự ái, bất hòa, mất cân bằng, sai lệch giá trị`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-lovers-trong-tarot/`
+},
+{
+ name_card: `Xe ngựa`,
+ number_card: 7,
+ img_card: `img/deck/07_Chariot.jpg`,
+orientation_card:[],
+ meta_description: `The Chariot là lá bài nói về việc vượt qua xung đột và tiến về phía trước theo hướng tích cực. Một người cần phải tiếp tục và thông qua sự chăm chỉ và cam kết tuyệt đối, anh ta sẽ chiến thắng.`,
+ meta_upright: `Kiểm soát, ý chí, thành công, hành động, quyết tâm`,
+ meta_reversed: `Tự giác, chống đối, thiếu định hướng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-chariot-trong-tarot/`
+},
+{
+ name_card: `Sức mạnh`,
+ number_card: 8,
+ img_card: `img/deck/08_Strength.jpg`,
+orientation_card:[],
+ meta_description: `Sức mạnh dự đoán kết luận chiến thắng cho một vấn đề, tình huống hoặc cám dỗ lớn trong cuộc sống thông qua sức mạnh của tính cách. Đây là một lá bài rất vui nếu bạn đang chiến đấu với bệnh tật hoặc đang hồi phục sau chấn thương.`,
+ meta_upright: `Sức mạnh, can đảm, thuyết phục, ảnh hưởng, lòng trắc ẩn`,
+ meta_reversed: `Sức mạnh nội tâm, sự nghi ngờ bản thân, năng lượng thấp, cảm xúc thô.`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-sức mạnh-trong-tarot/`
+},
+{
+ name_card: `Ẩn sĩ`,
+ number_card: 9,
+ img_card: `img/deck/09_Hermit.jpg`,
+orientation_card:[],
+ meta_description: `The Hermit gợi ý rằng bạn đang trong giai đoạn xem xét nội tâm khi bạn hướng sự chú ý của mình vào bên trong và tìm kiếm câu trả lời bên trong. Bạn đang cần một khoảng thời gian để suy ngẫm nội tâm, tránh xa những yêu cầu hiện tại của vị trí của bạn.`,
+ meta_upright: `Tìm kiếm tâm hồn, xem xét nội tâm, ở một mình, hướng dẫn nội tâm`,
+ meta_reversed: `Cô lập, cô đơn, rút lui`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-hermit-trong-tarot/`
+},
+{
+ name_card: `Vòng quay may mắn`,
+ number_card: 10,
+ img_card: `img/deck/10_Wheel_of_Fortune.jpg`,
+orientation_card:[],
+ meta_description: `Một khía cạnh phổ biến đối với hầu hết các cách diễn giải lá bài này trong một trải bài là đưa ra một yếu tố thay đổi trong cuộc sống của người hỏi, những thay đổi đó liên quan đến địa vị, địa vị hoặc vận may: chẳng hạn như người giàu trở thành người nghèo, hoặc người nghèo trở nên giàu có.`,
+ meta_upright: `May mắn, nghiệp chướng, vòng đời, định mệnh, bước ngoặt`,
+ meta_reversed: `Xui xẻo, chống lại sự thay đổi, phá vỡ các chu kỳ`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-wheel-of-fortune-trong-tarot/`
+},
+{
+ name_card: `Công lý`,
+ number_card: 11,
+ img_card: `img/deck/11_Justice.jpg`,
+orientation_card:[],
+ meta_description: ` Lá bài Justice chỉ ra rằng quyết định công bằng nhất sẽ được đưa ra. Công lý là thanh gươm cắt ngang hoàn cảnh và sẽ không bị lung lay bởi vẻ đẹp bên ngoài khi quyết định điều gì là công bằng và chính đáng.`,
+ meta_upright: `Công lý, công bằng, sự thật, nhân quả, pháp luật`,
+ meta_reversed: `Không công bằng, thiếu trách nhiệm, không trung thực`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-justice-trong-tarot/`
+},
+{
+ name_card: `Người treo cổ`,
+ number_card: 12,
+ img_card: `img/deck/12_Hanged_Man.jpg`,
+orientation_card:[],
+ meta_description: `The Hanged Man là lá bài ám chỉ sự đầu hàng, hy sinh hoặc bị đình chỉ trong thời gian.`,
+ meta_upright: `Dừng lại, đầu hàng, buông bỏ, góc nhìn mới`,
+ meta_reversed: `Trì hoãn, kháng cự, đình trệ, do dự`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-hanged-man-trong-tarot/`
+},
+{
+ name_card: `Cái chết`,
+ number_card: 13,
+ img_card: `img/deck/13_Death.jpg`,
+orientation_card:[],
+ meta_description: `Rất khó có khả năng lá bài này thực sự tượng trưng cho cái chết về thể xác. Thông thường, nó ám chỉ sự kết thúc, có thể là một mối quan hệ hoặc mối quan tâm, và do đó ngụ ý ý thức tự nhận thức ngày càng tăng.`,
+ meta_upright: `Kết thúc, thay đổi, biến đổi, chuyển tiếp`,
+ meta_reversed: `Kháng cự thay đổi, chuyển hóa cá nhân, thanh lọc nội tâm`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-death-trong-tarot/`
+},
+{
+ name_card: `Nhiệt độ`,
+ number_card: 14,
+ img_card: `img/deck/14_Temperance.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này chỉ ra rằng bạn nên học cách mang lại sự cân bằng, kiên nhẫn và điều độ trong cuộc sống của mình. Bạn nên đi theo con đường trung dung, tránh những điều cực đoan và giữ bình tĩnh.`,
+ meta_upright: `Cân bằng, điều độ, kiên nhẫn, có mục đích`,
+ meta_reversed: `Mất cân bằng, dư thừa, tự phục hồi, sắp xếp lại`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-temperance-trong-tarot/`
+},
+{
+ name_card: `Quỷ`,
+ number_card: 15,
+ img_card: `img/deck/15_Devil.jpg`,
+orientation_card:[],
+ meta_description: `Nó tượng trưng cho việc bị quyến rũ bởi thế giới vật chất và những thú vui vật chất. Cũng sống trong sợ hãi, thống trị và tù túng, bị giam hãm bởi sự xa hoa quá mức, nên sử dụng sự thận trọng trong các vấn đề cá nhân và kinh doanh.`,
+ meta_upright: `Cái bóng của bản thân, sự gắn bó, nghiện ngập, hạn chế, tình dục`,
+ meta_reversed: `Giải phóng niềm tin giới hạn, khám phá những suy nghĩ đen tối, tách rời`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-devil-trong-tarot/`
+},
+{
+ name_card: `Tháp`,
+ number_card: 16,
+ img_card: `img/deck/16_Tower.jpg`,
+orientation_card:[],
+ meta_description: `The Tower thường được hiểu là có nghĩa là nguy hiểm, khủng hoảng, hủy diệt và giải phóng. Nó liên quan đến sự thay đổi đột ngột không lường trước được.`,
+ meta_upright: `Thay đổi đột ngột, biến động, hỗn loạn, mặc khải, thức tỉnh`,
+ meta_reversed: `Chuyển đổi cá nhân, sợ thay đổi, tránh thảm họa`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-tower-trong-tarot/`
+},
+{
+ name_card: `Ngôi sao`,
+ number_card: 17,
+ img_card: `img/deck/17_Star.jpg`,
+orientation_card:[],
+ meta_description: `Khi lá bài Ngôi sao xuất hiện, bạn có khả năng thấy mình được truyền cảm hứng. Nó mang lại hy vọng và niềm tin mới cũng như cảm giác rằng bạn thực sự được vũ trụ ban phước vào thời điểm này.`,
+ meta_upright: `Hy vọng, đức tin, mục đích, đổi mới, tâm linh`,
+ meta_reversed: `Thiếu niềm tin, tuyệt vọng, tự tin, mất kết nối`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-star-trong-tarot/`
+},
+{
+ name_card: `Mặt trăng`,
+ number_card: 18,
+ img_card: `img/deck/18_Moon.jpg`,
+orientation_card:[],
+ meta_description: `The Moon là lá bài của sự ảo tưởng và lừa dối, và do đó thường gợi ý về thời điểm khi một thứ gì đó không như vẻ bề ngoài của nó. Có thể là một sự hiểu lầm từ phía bạn, hoặc một sự thật mà bạn không thể thừa nhận với chính mình.`,
+ meta_upright: `Ảo ảnh, sợ hãi, lo lắng, tiềm thức, trực giác`,
+ meta_reversed: `Giải phóng nỗi sợ hãi, cảm xúc bị kìm nén, sự bối rối bên trong`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-moon-trong-tarot/`
+},
+{
+ name_card: `Mặt trời`,
+ number_card: 19,
+ img_card: `img/deck/19_Sun.jpg`,
+orientation_card:[],
+ meta_description: ` Lá bài báo hiệu sự may mắn, hạnh phúc, niềm vui và sự hòa hợp. Nó tượng trưng cho vũ trụ đến với nhau và đồng ý với con đường của bạn và hỗ trợ chuyển động về phía trước thành một điều gì đó vĩ đại hơn.`,
+ meta_upright: `Tích cực, vui vẻ, ấm áp, thành công, sức sống`,
+ meta_reversed: `Trẻ nội tâm, cảm thấy hụt hẫng, lạc quan thái quá`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-sun-trong-tarot/`
+},
+{
+ name_card: `Bản án`,
+ number_card: 20,
+ img_card: `img/deck/20_Judgement.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này được gọi là thời điểm hồi sinh và thức tỉnh, thời điểm khi một giai đoạn trong cuộc đời chúng ta kết thúc hoàn toàn để nhường chỗ cho những khởi đầu mới năng động.`,
+ meta_upright: `Sự phán xét, sự tái sinh, tiếng gọi bên trong, sự giải tội`,
+ meta_reversed: `Tự nghi ngờ, chỉ trích nội tâm, phớt lờ tiếng gọi`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-judgement-trong-tarot/`
+},
+{
+ name_card: `Thế giới`,
+ number_card: 21,
+ img_card: `img/deck/21_World.jpg`,
+orientation_card:[],
+ meta_description: `The World đại diện cho sự kết thúc của một chu kỳ cuộc sống, một khoảng dừng trong cuộc sống trước khi chu kỳ lớn tiếp theo bắt đầu với kẻ ngốc. Đó là một chỉ báo về một sự thay đổi lớn và không thể lay chuyển, về bề rộng kiến tạo.`,
+ meta_upright: `Hoàn thành, tích hợp, thành tựu, du lịch`,
+ meta_reversed: `Tìm kiếm sự đóng cửa cá nhân, lối tắt, sự chậm trễ`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-world-trong-tarot/`
+},
+{
+ name_card: `Quân át chủ bài`,
+ number_card: 22,
+ img_card: `img/deck/22_Ace_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: ` Lá bài này đại diện cho một khởi đầu mới thuận lợi hoặc một bước ngoặt tốt hơn. Khi lá bài này xuất hiện, sự lạc quan của chúng ta nên được sử dụng như kim chỉ nam cho những giấc mơ của chúng ta.`,
+ meta_upright: `Cảm hứng, sức mạnh, sáng tạo, khởi đầu, tiềm năng`,
+ meta_reversed: `Chậm trễ, thiếu động lực, đè nặng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-ace-wands-trong-tarot/`
+},
+{
+ name_card: `Hai cây đũa phép`,
+ number_card: 23,
+ img_card: `img/deck/23_Two_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `The Two of Wands là họ hàng gần của lá bài trước nó, Ace of Wands. Ở đây, thay vì tập trung vào sự nhiệt tình không kiềm chế của bạn cho một mục tiêu theo đuổi mới, bạn cần tập trung vào việc cân nhắc và lập kế hoạch cẩn thận.`,
+ meta_upright: `Lập kế hoạch tương lai, tiến độ, quyết định, khám phá`,
+ meta_reversed: `Sợ không biết, thiếu kế hoạch`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-2-wands-trong-tarot/`
+},
+{
+ name_card: `Ba cây đũa phép`,
+ number_card: 24,
+ img_card: `img/deck/24_Three_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài chỉ ra rằng kế hoạch mà chúng ta đã lập cho tương lai của mình là cân nhắc và nghiêm túc. Thời gian nghiêm túc mà chúng tôi dành cho việc chuẩn bị cho thấy một nền tảng vững chắc cho tương lai.`,
+ meta_upright: `Chuẩn bị, tầm nhìn xa, doanh nghiệp, mở rộng`,
+ meta_reversed: `Thiếu tầm nhìn xa, chậm trễ, cản trở mục tiêu dài hạn`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-3-wands-trong-tarot/`
+},
+{
+ name_card: `Bốn cây đũa phép`,
+ number_card: 25,
+ img_card: `img/deck/25_Four_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Four of Wands báo hiệu lễ kỷ niệm. Mặc dù nó chủ yếu liên quan đến những điều nhỏ nhặt hơn trong cuộc sống, nhưng lá bài này sẽ giúp nhắc nhở chúng ta hãy tận hưởng những chiến thắng nhỏ và sự hài hòa trong cuộc sống.`,
+ meta_upright: `Lễ kỷ niệm, hòa hợp, hôn nhân, gia đình, cộng đồng`,
+ meta_reversed: `Đứt đoạn trong giao tiếp, chuyển tiếp`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-4-wands-trong-tarot/`
+},
+{
+ name_card: `Năm cây đũa phép`,
+ number_card: 26,
+ img_card: `img/deck/26_Five_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này ám chỉ xung đột trong cuộc sống của chúng ta, cho dù đó là xung đột cạnh tranh hay cảm giác không có gì thuận lợi. Khi rút lá Five of Wands, chúng ta nên nhớ rằng tốt hơn hết là nên giải quyết các xung đột một cách nhanh chóng và sự kiên nhẫn giải quyết chúng sẽ loại bỏ rất nhiều căng thẳng mà chúng gây ra.`,
+ meta_upright: `Bất đồng, cạnh tranh, xung đột, căng thẳng, xung đột`,
+ meta_reversed: `Tránh xung đột, tăng cường tập trung vào các mục tiêu`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai- 5-wands-trong-tarot/`
+},
+{
+ name_card: `Sáu cây đũa phép`,
+ number_card: 27,
+ img_card: `img/deck/27_Six_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Đối bản phụ của The Chariot, Six of Wands báo trước sự công nhận của công chúng về sự chăm chỉ và đạt được mục tiêu của chúng ta.`,
+ meta_upright: `Được công chúng công nhận, chiến thắng, tiến bộ, tự tin`,
+ meta_reversed: `Tự cao tự đại, tai tiếng, thiếu tự tin, sa ngã`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-6-wands-trong-tarot/`
+},
+{
+ name_card: `Bảy cây đũa phép`,
+ number_card: 28,
+ img_card: `img/deck/28_Seven_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Ý nghĩa của Seven of Wands rất rõ ràng trong cách miêu tả của nó: giữ vững lập trường. Tôi nghĩ rằng không phải tất cả các vị trí đều đáng giá, và chúng ta nên cẩn thận suy nghĩ xem mình đã chọn đúng ngọn đồi để chết chưa.`,
+ meta_upright: `Thử thách, cạnh tranh, kiên trì`,
+ meta_reversed: `Bỏ cuộc, choáng ngợp, bảo vệ quá mức`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-7-wands-trong-tarot/`
+},
+{
+ name_card: `Tám cây đũa phép`,
+ number_card: 29,
+ img_card: `img/deck/29_Eight_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Thông thường, Eight of Wands là một dấu hiệu cho thấy chúng ta đã sẵn sàng đương đầu với những thử thách đang đối mặt với mình. Nó cũng có thể chỉ ra rằng tin tức quan trọng có thể sớm đến.`,
+ meta_upright: `Tốc độ, hành động, di chuyển trên không, chuyển động, thay đổi nhanh chóng`,
+ meta_reversed: `Trì hoãn, thất vọng, trì hoãn`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-8-wands-trong-tarot/`
+},
+{
+ name_card: `Chín cây đũa phép`,
+ number_card: 30,
+ img_card: `img/deck/30_Nine_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Nhân vật trong bức chân dung của lá bài có hình dáng mệt mỏi, và ý nghĩa của lá bài bắt nguồn từ cả hai nghĩa của từ này. Chúng ta nên cẩn thận trong cách tiếp cận vấn đề, nhưng cũng nên cảm nhận sức mạnh <i>sức chịu đựng</i> khi đối mặt với khó khăn.`,
+ meta_upright: `Dũng cảm, kiên trì, thử thách niềm tin, kiên cường`,
+ meta_reversed: `Cạnh tranh, phòng thủ, do dự, hoang tưởng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-9-wands-trong-tarot/`
+},
+{
+ name_card: `Mười cây đũa phép`,
+ number_card: 31,
+ img_card: `img/deck/31_Ten_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Ten of Wands nói về trách nhiệm. Con số trong bức chân dung của lá bài phải vật lộn với một gánh nặng, cho thấy rằng chúng ta có thể đang cố gắng làm quá nhiều việc. Nó cũng có thể chỉ ra rằng chẳng bao lâu nữa chúng ta sẽ đảm nhận nhiều trách nhiệm hơn trước đây.`,
+ meta_upright: `Gánh nặng, trách nhiệm, chăm chỉ, căng thẳng, thành tích`,
+ meta_reversed: `Làm nhiều việc, trốn tránh trách nhiệm`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-10-wands-trong-tarot/`
+},
+{
+ name_card: `Trang đũa phép`,
+ number_card: 32,
+ img_card: `img/deck/32_Page_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Page of Wands là điềm báo về những đam mê không bị cản trở, tia lửa trong chúng ta dẫn đến sự bùng nổ sáng tạo và sự ngạc nhiên của trẻ thơ khi đối mặt với những ý tưởng mới. Lá bài này sẽ cho chúng ta dũng khí theo đuổi những ý tưởng sáng tạo đã được tranh luận từ lâu, và cho phép chúng ta được thỏa sức sáng tạo.`,
+ meta_upright: `Nhiệt tình, khám phá, khám phá, tinh thần tự do`,
+ meta_reversed: `Thất bại trước những ý tưởng mới, bi quan, thiếu định hướng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-page-wands-trong-tarot/`
+},
+{
+ name_card: `Hiệp sĩ đũa phép`,
+ number_card: 33,
+ img_card: `img/deck/33_Knight_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Hiệp sĩ Wands tự mãn và thích phiêu lưu, nhưng luôn có lúc và địa điểm cho sự táo bạo. Chúng ta nên xem xét liệu chúng ta có đang vội vã theo đuổi mục tiêu của mình hay không và liệu sự tự tin thái quá của chúng ta đang giúp ích hay gây hại cho chúng ta.`,
+ meta_upright: `Năng lượng, đam mê, ham muốn, hành động, phiêu lưu, bốc đồng`,
+ meta_reversed: `Vội vàng, năng lượng phân tán, chậm trễ, thất vọng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-knight-wands-trong-tarot/`
+},
+{
+ name_card: `Nữ hoàng đũa phép`,
+ number_card: 34,
+ img_card: `img/deck/34_Queen_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Nữ hoàng này tràn ngập tất cả sự mê hoặc của bộ đũa phép. Cô ấy yêu cầu chúng ta bắt chước cô ấy, mang niềm tin, sự duyên dáng, sự quyến rũ và sự kiên định của cô ấy vào những khía cạnh hướng nội trong cuộc sống của chính chúng ta.`,
+ meta_upright: `Hoa lệ, ấm áp, sống động, quyết tâm`,
+ meta_reversed: `Tím co lại, hung hăng, đòi hỏi`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-queen-wands-trong-tarot/`
+},
+{
+ name_card: `Vua đũa phép`,
+ number_card: 35,
+ img_card: `img/deck/35_King_of_Wands.jpg`,
+orientation_card:[],
+ meta_description: `Vị vua này tràn ngập sức sống sáng tạo và sự kịch tính. Anh ấy yêu cầu chúng ta noi gương anh ấy, mang lại sự tự tin, niềm tin và sự đảm bảo của anh ấy cho những mục tiêu của chúng ta trong cuộc sống.`,
+ meta_upright: `Nhà lãnh đạo bẩm sinh, tầm nhìn, doanh nhân, danh dự`,
+ meta_reversed: `Bốc đồng, hấp tấp, tàn nhẫn, kỳ vọng cao`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-king-wands-trong-tarot/`
+},
+{
+ name_card: `Quân át chủ bài`,
+ number_card: 36,
+ img_card: `img/deck/36_Ace_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này cho thấy sự thịnh vượng và điều kiện vật chất thoải mái, nhưng liệu những điều này có lợi cho người sở hữu hay không sẽ phụ thuộc vào việc lá bài có bị đảo ngược hay không.`,
+ meta_upright: `Một cơ hội nghề nghiệp hoặc tài chính mới, biểu hiện, sự phong phú`,
+ meta_reversed: `Mất cơ hội, thiếu kế hoạch và tầm nhìn xa`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-ace-pentacles-trong-tarot/`
+},
+{
+ name_card: `Hai trong số các Pentacles`,
+ number_card: 37,
+ img_card: `img/deck/37_Two_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Một mặt, nó là một lá bài vui vẻ, giải trí và các mối liên hệ của nó, là chủ đề của thiết kế; nhưng nó cũng được đọc như tin tức và thông điệp bằng văn bản, như trở ngại, kích động, rắc rối, lôi kéo. `,
+ meta_upright: `Nhiều ưu tiên, quản lý thời gian, ưu tiên, khả năng thích ứng`,
+ meta_reversed: `Cam kết quá mức, vô tổ chức, sắp xếp lại thứ tự ưu tiên`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-2-pentacles-trong-tarot/`
+},
+{
+ name_card: `Ba ngôi sao năm cánh`,
+ number_card: 38,
+ img_card: `img/deck/38_Three_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Métier, thương mại, lao động lành nghề; tuy nhiên, thường được coi là lá bài của giới quý tộc, quý tộc, danh tiếng, vinh quang.`,
+ meta_upright: `Làm việc theo nhóm, cộng tác, học hỏi, thực hiện`,
+ meta_reversed: `Không hòa hợp, lệch lạc, làm việc đơn lẻ`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-3-pentacles-trong-tarot/`
+},
+{
+ name_card: `Tứ giác`,
+ number_card: 39,
+ img_card: `img/deck/39_Four_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này ám chỉ sự chắc chắn của tài sản, gắn liền với những gì người ta có, quà tặng, di sản, thừa kế.`,
+ meta_upright: `Tiết kiệm tiền, an toàn, thận trọng, khan hiếm, kiểm soát`,
+ meta_reversed: `Chi tiêu quá mức, tham lam, tự vệ`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-4-pentacles-trong-tarot/`
+},
+{
+ name_card: `Ngôi sao năm cánh`,
+ number_card: 40,
+ img_card: `img/deck/40_Five_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này báo trước những rắc rối vật chất trên hết, cho dù dưới hình thức được minh họa nghĩa là cơ cực hay cách khác. Đối với một số nhà cartomancist, đây là lá bài của tình yêu và người yêu vợ, chồng, bạn bè, tình nhân; cũng là sự tương hợp, sự tương đồng. Những lựa chọn thay thế này không thể được hài hòa.`,
+ meta_upright: `Thất thoát tài chính, nghèo đói, thiếu tư duy, cô lập, lo lắng`,
+ meta_reversed: `Phục hồi từ mất mát tài chính, nghèo nàn về tinh thần`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai- 5-pentacles-trong-tarot/`
+},
+{
+ name_card: `Sáu of Pentacles`,
+ number_card: 41,
+ img_card: `img/deck/41_Six_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Six of Pentacles đại diện cho quà tặng, món quà và sự hài lòng. Một tài khoản khác cho biết thẻ kêu gọi sự chú ý, cảnh giác hoặc bây giờ là thời điểm được chấp nhận, nhưng đặc biệt là sự thịnh vượng hiện tại -AE Waite`,
+ meta_upright: `Cho, nhận, chia sẻ của cải, rộng lượng, từ thiện`,
+ meta_reversed: `Chăm sóc bản thân, nợ chưa trả, từ thiện một phía`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-6-pentacles-trong-tarot/`
+},
+{
+ name_card: `Bảy ngôi sao năm cánh`,
+ number_card: 42,
+ img_card: `img/deck/42_Seven_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Một người đàn ông trẻ tuổi, dựa vào cây gậy của mình, chăm chú nhìn vào bảy hình sao năm cánh gắn trên một khóm cây xanh bên phải anh ta; người ta sẽ nói rằng đây là kho báu của anh ấy và trái tim anh ấy ở đó. Ý nghĩa trong lá bài này cực kỳ mâu thuẫn; về cơ bản, nó là một lá bài về tiền bạc, kinh doanh, đổi chác; nhưng một lượt đọc mang đến sự ẩu đả, cãi vã – và một lượt đọc khác mang đến sự ngây thơ, khéo léo và thanh trừng. `,
+ meta_upright: `Tầm nhìn dài hạn, kết quả bền vững, kiên trì, đầu tư`,
+ meta_reversed: `Thiếu tầm nhìn dài hạn, thành công hoặc phần thưởng hạn chế`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-7-pentacles-trong-tarot/`
+},
+{
+ name_card: `Tám of Pentacles`,
+ number_card: 43,
+ img_card: `img/deck/43_Eight_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Người đàn ông đang làm việc được miêu tả trong lá bài đại diện cho một loại thu nhập khác với hầu hết các bộ Pentacle. Ở đây, người đàn ông làm việc chăm chỉ với nghề của mình, không phải vì lợi ích tài chính (mặc dù nó có thể đến!) mà vì tình yêu nghề và theo đuổi sự thành thạo. Chúng ta nên xem lá bài này như một dấu hiệu đáng khích lệ trong cuộc sống công việc hoặc theo đuổi sáng tạo cá nhân.`,
+ meta_upright: `Học nghề, nhiệm vụ lặp đi lặp lại, thành thạo, phát triển kỹ năng`,
+ meta_reversed: `Tự phát triển, chủ nghĩa hoàn hảo, hoạt động sai hướng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-8-pentacles-trong-tarot/`
+},
+{
+ name_card: `Cửu ngũ tinh`,
+ number_card: 44,
+ img_card: `img/deck/44_Nine_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Nine of Pentacles báo hiệu một bước ngoặt tốt đẹp sau một thời gian làm việc chăm chỉ. Một lợi ích tài chính lớn có thể đang đến, hoặc có thể thời gian nghỉ ngơi đó sẽ sớm thuộc về chúng ta.`,
+ meta_upright: `Phong phú, sang trọng, tự cung tự cấp, độc lập về tài chính`,
+ meta_reversed: `Giá trị bản thân, đầu tư quá nhiều vào công việc, hối hả`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-9-pentacles-trong-tarot/`
+},
+{
+ name_card: `Thập ngũ giác`,
+ number_card: 45,
+ img_card: `img/deck/45_Ten_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Ten of Pentacles chỉ ra sự ổn định tuyệt vời trong đời sống tài chính và tình cảm của chúng ta. Chúng ta không bao giờ được quên, như lá bài cho chúng ta thấy, rằng sự ổn định này không bao giờ là công việc của riêng một người, mà là của một cộng đồng, gia đình và những thứ khác.`,
+ meta_upright: `Giàu có, an ninh tài chính, gia đình, thành công lâu dài, đóng góp`,
+ meta_reversed: `Mặt tối của sự giàu có, thất bại hoặc mất mát về tài chính`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-10-pentacles-trong-tarot/`
+},
+{
+ name_card: `Trang của Pentacles`,
+ number_card: 46,
+ img_card: `img/deck/46_Page_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Trang này mang đến thông tin về khả năng của chúng ta trong việc trải nghiệm sự ổn định tài chính, giàu có và ổn định - tất cả lời hứa của bộ Pentacles. `,
+ meta_upright: `Thể hiện, cơ hội tài chính, phát triển kỹ năng`,
+ meta_reversed: `Không cầu tiến, trì hoãn, học từ thất bại`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-page-pentacles-trong-tarot/`
+},
+{
+ name_card: `Hiệp sĩ Pentacles`,
+ number_card: 47,
+ img_card: `img/deck/47_Knight_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Như với tất cả các Hiệp sĩ, Knight of Pentacles đại diện cho một triển vọng Janian. Anh ấy mời chúng ta xem xét sự khác biệt giữa làm việc chăm chỉ và mài giũa, thận trọng và sa đọa. Điều nào chính xác hơn trong việc mô tả cuộc sống và hành động của chúng ta?`,
+ meta_upright: `Làm việc chăm chỉ, năng suất, thói quen, bảo thủ`,
+ meta_reversed: `Kỷ luật tự giác, buồn chán, cảm giác "bế tắc", cầu toàn`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-knight-pentacles-trong-tarot/`
+},
+{
+ name_card: `Nữ hoàng của các Pentacles`,
+ number_card: 48,
+ img_card: `img/deck/48_Queen_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Queen of Pentacles là một nhân vật sắc sảo, nhưng biết nuôi dưỡng. Công việc của cô ấy ổn thỏa, điều này cho phép cô ấy chăm sóc tốt hơn cho những người cô ấy yêu thương. Khi rút lá Queen of Pentacles, chúng ta nên tìm một nhân vật trong cuộc sống của mình (có thể là chính chúng ta hoặc một người thân) giống với bà nhất. Nếu đó là chính chúng ta, chúng ta được mời hóa thân vào nhân vật của cô ấy. Có lẽ những người xung quanh chúng ta cần được quan tâm nhiều hơn và chúng ta nên sẵn lòng cung cấp điều đó.`,
+ meta_upright: `Nuôi dưỡng, thiết thực, cung cấp tài chính, cha/mẹ đi làm`,
+ meta_reversed: `Độc lập tài chính, tự chăm sóc bản thân, mâu thuẫn giữa công việc và gia đình`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-queen-pentacles-trong-tarot/`
+},
+{
+ name_card: `Vua của các Pentacles`,
+ number_card: 49,
+ img_card: `img/deck/49_King_of_Pentacles.jpg`,
+orientation_card:[],
+ meta_description: `Cần cù và vương giả, King of Pentacles là dấu hiệu của sự thành công và đơm hoa kết trái. Tuy nhiên, chúng ta nên lưu ý <em>làm thế nào</em> Nhà vua đã đạt được thành công của mình. Tiết kiệm và có trách nhiệm, hãy để anh ấy nhắc nhở chúng ta cẩn thận trong việc theo đuổi của mình và đừng bao giờ làm quá sức mình.`,
+ meta_upright: `Giàu có, kinh doanh, lãnh đạo, an ninh, kỷ luật, phong phú`,
+ meta_reversed: `Kém tài chính, bị ám ảnh bởi sự giàu có và địa vị, bướng bỉnh`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-king-pentacles-trong-tarot/`
+},
+{
+ name_card: `Quân át chủ bài`,
+ number_card: 50,
+ img_card: `img/deck/50_Ace_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `Những chiếc cốc là trang phục của trái tim. Lá Ace of Cups cho chúng ta biết rằng tình yêu là trung tâm của tình trạng khó khăn hiện tại của chúng ta. Nhưng đừng lo: sự xuất hiện của lá bài này trong trải bài của chúng ta cho thấy ngôi sao của chúng ta đang lên. Chúng ta nên nhớ rằng đây có thể là tình yêu agapic, tình yêu nhục dục, hoặc có lẽ là cả hai. Kết nối với những người khác thông qua tình yêu thương dưới mọi hình thức: sự tha thứ, lòng trắc ẩn, sự đồng cảm, tình cảm.`,
+ meta_upright: `Tình yêu, các mối quan hệ mới, lòng trắc ẩn, sự sáng tạo`,
+ meta_reversed: `Lòng yêu bản thân, trực giác, cảm xúc bị kìm nén`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-ace-cups-trong-tarot/`
+},
+{
+ name_card: `Hai chiếc cốc`,
+ number_card: 51,
+ img_card: `img/deck/51_Two_of_Cups.jpg`,
+orientation_card:[],
+ meta_description:`The Two of Cups là tiếng vang của Bộ ẩn phụ của The Lovers. Nó đại diện cho sự hiệp thông, đặc biệt là giữa hai thực thể, và cho chúng ta biết rằng đã đến lúc hợp tác. Chúng ta nên chắc chắn không quên rằng các đối tác thường tạo ra thế giới của riêng họ và việc tách bản thân ra khỏi thế giới rộng lớn xung quanh chúng ta hiếm khi là điều tích cực.`,
+ meta_upright: `Thống nhất tình yêu, hợp tác, thu hút lẫn nhau`,
+ meta_reversed: `Tự ái, chia tay, bất hòa, ngờ vực`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-2-cups-trong-tarot/`
+},
+{
+ name_card: `Ba chiếc cốc`,
+ number_card: 52,
+ img_card: `img/deck/52_Three_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: ` Lá Three of Cups báo trước những cuộc gặp gỡ-cùng nhau và những buổi ăn mừng. Mặc dù hời hợt hơn Two of Cups, nhưng Three of Cups mời gọi chúng ta tiếp cận và kết nối với những người khác. Tìm cộng đồng của bạn, gia đình của bạn, và các mối quan hệ của bạn. Chúng là chìa khóa giúp bạn trưởng thành và chữa lành vết thương.`,
+ meta_upright: `Lễ kỷ niệm, tình bạn, sáng tạo, hợp tác`,
+ meta_reversed: `Độc lập, thời gian một mình, tiệc tùng mạnh mẽ, "ba người"`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-3-cups-trong-tarot/`
+},
+{
+ name_card: `Tứ cốc`,
+ number_card: 53,
+ img_card: `img/deck/53_Four_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `Four of Cups là tấm gương phản chiếu của Three of Cups. Ở đây thay vì vươn ra, chúng ta nên dành thời gian để chiêm nghiệm sâu sắc. Chúng ta cũng được mời mở lòng với những khả năng mới: người thiền định trong bức chân dung của lá bài nhìn chằm chằm vào những chiếc cốc trước mặt anh ta một cách bất mãn, phớt lờ món quà được đưa ra ngay ngoài tầm nhìn của anh ta.`,
+ meta_upright: `Thiền định, chiêm nghiệm, thờ ơ, đánh giá lại`,
+ meta_reversed: `Lui, rút, kiểm tra cho thẳng hàng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-4-cups-trong-tarot/`
+},
+{
+ name_card: `Năm ly`,
+ number_card: 54,
+ img_card: `img/deck/54_Five_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này thể hiện sự đau đớn bi quan về quá khứ. Nhân vật đã đánh mất ba chiếc cốc của mình, nhưng hai chiếc còn lại nằm khuất sau lưng họ. Cây cầu ở đằng xa dẫn qua dòng sông đầy sóng gió, nhưng họ vẫn chưa đi qua nó, thay vào đó họ đang tập trung vào sự mất mát của họ. Hãy để lá bài này nhắc nhở chúng ta rằng chuyển động là chìa khóa để vượt qua nỗi đau và mất mát, và cây cầu luôn ở đó để vượt qua dòng nước cuộn dưới cầu.`,
+ meta_upright: `Hối tiếc, thất bại, thất vọng, bi quan`,
+ meta_reversed: `Thất bại cá nhân, tự tha thứ, tiến lên`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai- 5-cups-trong-tarot/`
+},
+{
+ name_card: `Sáu ly`,
+ number_card: 55,
+ img_card: `img/deck/55_Six_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `The Six of Cups mời gọi chúng ta tái khám phá những điều kỳ diệu và ý tưởng về tình yêu trẻ thơ của chúng ta. Những cách suy nghĩ đơn giản hơn này giúp xua tan những nghi ngờ gieo rắc tâm trí quá tự ti. Không phải tất cả các động cơ đều đáng ngờ. Đôi khi tình yêu được trao đi vì lợi ích của chính nó.`,
+ meta_upright: `Nối lại quá khứ, ký ức tuổi thơ, hồn nhiên, vui tươi`,
+ meta_reversed: `Sống trong quá khứ, tha thứ, thiếu vui tươi`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-6-cups-trong-tarot/`
+},
+{
+ name_card: `Bảy chiếc cốc`,
+ number_card: 56,
+ img_card: `img/deck/56_Seven_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `Đây là một lá bài xung đột. Những cám dỗ được đặt trước trong tầm nhìn của nó, nhưng cơ hội để được mặc khải cũng vậy. Chỉ bạn mới có thể quyết định xem ảo ảnh có thật hay không: Đầu của người yêu, nhân vật đội mũ trùm đầu mời gọi tự phát sáng, con rắn cám dỗ, lâu đài kiên cố, sự giàu có của kho báu, vòng nguyệt quế của kẻ chiến thắng và con rồng tai họa.`,
+ meta_upright: `Cơ hội, lựa chọn, mơ tưởng, ảo tưởng`,
+ meta_reversed: `Sự liên kết, giá trị cá nhân, bị choáng ngợp bởi các lựa chọn`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-7-cups-trong-tarot/`
+},
+{
+ name_card: `Tám ly`,
+ number_card: 57,
+ img_card: `img/deck/57_Eight_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `The Eight of Cups là lá bài của sự vỡ mộng. Nhân vật trong bức chân dung của lá bài rời xa những gì họ mong muốn trước đây để hướng tới một đêm ảm đạm. Lá bài này nhắc nhở chúng ta rằng ngay cả khi bị tổn thương, chúng ta luôn có thể tránh khỏi mọi tình huống. Nhưng đừng quên rằng khả năng phán đoán hoặc hiểu biết kém về một tình huống có thể khiến chúng ta xa rời những điều đúng đắn bấy lâu nay.`,
+ meta_upright: `Thất vọng, ruồng bỏ, rút lui, thoát ly thực tế`,
+ meta_reversed: `Cố gắng thêm lần nữa, do dự, trôi dạt vô định, bước đi.`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-8-cups-trong-tarot/`
+},
+{
+ name_card: `Chín cốc`,
+ number_card: 58,
+ img_card: `img/deck/58_Nine_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `Nine of Cups bảo chúng ta hãy tận hưởng và nuông chiều bản thân. Có thể hài lòng với cách mọi thứ đã diễn ra và tận hưởng những khoảnh khắc vui vẻ trong những ngày của chúng ta.`,
+ meta_upright: `Mãn nguyện, hài lòng, biết ơn, mong muốn trở thành sự thật`,
+ meta_reversed: `Hạnh phúc bên trong, chủ nghĩa vật chất, sự không hài lòng, đam mê`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-9-cups-trong-tarot/`
+},
+{
+ name_card: `Mười ly`,
+ number_card: 59,
+ img_card: `img/deck/59_Ten_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `Xác định, đây là một trong những lá bài tích cực nhất trong bộ bài Tarot; đảo ngược: một trong những tai họa nhất. Ten of Cups báo hiệu sự mãn nguyện của trái tim, và sự hoàn hảo của tình yêu và tình bạn. Nó chỉ ra một môi trường lành mạnh và tích cực, có thể là ở nhà hoặc trên toàn quốc gia.`,
+ meta_upright: `Tình yêu thiêng liêng, các mối quan hệ hạnh phúc, sự hài hòa, sự liên kết`,
+ meta_reversed: `Sự mất kết nối, các giá trị không phù hợp, các mối quan hệ gặp khó khăn`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-10-cups-trong-tarot/`
+},
+{
+ name_card: `Trang cốc`,
+ number_card: 60,
+ img_card: `img/deck/60_Page_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: ` Lá bài này đại diện cho một đứa trẻ đặc biệt được yêu quý, hoặc theo đuổi nghệ thuật hoặc học tập với sự kiên trì như trẻ thơ. Hãy để nó nhắc nhở chúng ta rằng kỹ năng và tầm nhìn có thể được trau dồi, miễn là chúng ta có thể khiến công việc không giống như công việc.`,
+ meta_upright: `Cơ hội sáng tạo, thông điệp trực quan, sự tò mò, khả năng`,
+ meta_reversed: `Ý tưởng mới, trực giác nghi ngờ, khối sáng tạo, cảm xúc non nớt`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-page-cups-trong-tarot/`
+},
+{
+ name_card: `Hiệp sĩ cốc`,
+ number_card: 61,
+ img_card: `img/deck/61_Knight_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `Nếu lá bài ngửa, nó đại diện cho sự thay đổi và những hứng thú mới, đặc biệt là về bản chất lãng mạn. Nó có thể có nghĩa là lời mời, cơ hội và ưu đãi. Knight of Cups là người mang đến những ý tưởng, cơ hội và lời đề nghị. Anh ấy thường xuyên cảm thấy buồn chán, và thường xuyên cần được kích thích, nhưng cũng rất nghệ thuật và tinh tế. Anh ấy đại diện cho một người hòa nhã, thông minh và đầy nguyên tắc cao, nhưng lại là một người mơ mộng, dễ bị thuyết phục hoặc nản lòng. Ngược lại, lá bài tượng trưng cho sự không đáng tin cậy và liều lĩnh. Nó chỉ ra gian lận, hứa hẹn sai lầm và mánh khóe. Nó đại diện cho một người gặp khó khăn trong việc phân biệt khi nào và ở đâu sự thật kết thúc và sự dối trá bắt đầu.`,
+ meta_upright: `Sáng tạo, lãng mạn, quyến rũ, trí tưởng tượng, vẻ đẹp`,
+ meta_reversed: `Trí tưởng tượng phong phú, không thực tế, ghen tuông, ủ rũ`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-knight-cups-trong-tarot/`
+},
+{
+ name_card: `Nữ hoàng cốc`,
+ number_card: 62,
+ img_card: `img/deck/62_Queen_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `Bức chân dung của tấm thiệp cho thấy một người phụ nữ trưởng thành có nước da trắng và mái tóc vàng óng đang cầm một chiếc cốc hoặc chén có nắp. Cô ấy được mô tả là một hình mẫu của đức tính yêu thương, một người có trái tim trong sáng hơn tất cả, một người mẹ yêu thương và một người bạn trung thành. Lá bài ngược có thể cảnh báo chúng ta về một người tình giả dối hoặc một người bạn hoặc người đồng hành lừa dối, những người có thể có một bí mật; một người giả vờ có trái tim trong sáng nhưng thực ra lại phản bội và thao túng.`,
+ meta_upright: `Từ bi, quan tâm, ổn định về cảm xúc, trực quan, trôi chảy`,
+ meta_reversed: `Cảm xúc bên trong, tự chăm sóc, yêu bản thân, đồng phụ thuộc`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-queen-cups-trong-tarot/`
+},
+{
+ name_card: `Vua của những chiếc cốc`,
+ number_card: 63,
+ img_card: `img/deck/63_King_of_Cups.jpg`,
+orientation_card:[],
+ meta_description: `King of Cups đại diện cho một người đàn ông có thiện cảm với chúng ta hoặc, theo nghĩa trừu tượng hơn, đề cập đến nghệ thuật và khoa học hoặc bất kỳ lĩnh vực nào liên quan đến trí thông minh sáng tạo. Tính cách của King of Cups là sự kết hợp giữa năng lượng nuôi dưỡng tích cực của nước trong bộ Cups và sự hướng ngoại, năng động của một vị Vua. King of Cups có thể là một người hướng dẫn và cố vấn tuyệt vời vì ông thường là người giúp đỡ không ích kỷ, mặc dù là một người dễ nổi giận. Anh ấy quan tâm đến người khác một cách chân thành và luôn đáp ứng nhu cầu của họ bằng lòng trắc ẩn. Anh ấy chữa lành bằng một cái chạm nhẹ nhàng và một lời nói nhỏ nhẹ. Anh ấy thường khoan dung với mọi quan điểm và thể hiện sự kiên nhẫn trong những hoàn cảnh khó khăn nhất.`,
+ meta_upright: `Cân bằng cảm xúc, từ bi, ngoại giao`,
+ meta_reversed: `Tự trắc ẩn, cảm xúc bên trong, ủ rũ, thao túng cảm xúc`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-king-cups-trong-tarot/`
+},
+{
+ name_card: `Át kiếm`,
+ number_card: 64,
+ img_card: `img/deck/64_Ace_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này biểu thị khả năng quyết đoán và vượt qua sự bối rối, đưa ra quyết định hoặc quan điểm cấp tiến và khả năng nhìn thấu sự lừa dối và vạch trần nó.`,
+ meta_upright: `Sức mạnh thô, chiến thắng, đột phá, tinh thần minh mẫn`,
+ meta_reversed: `Nhầm lẫn, hỗn loạn, thiếu rõ ràng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-ace-swords-trong-tarot/`
+},
+{
+ name_card: `Hai thanh kiếm`,
+ number_card: 65,
+ img_card: `img/deck/65_Two_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Đây là một lá bài thiền định, không phải hành động. Các thanh kiếm đan chéo nhau chỉ ra các hướng có thể khác nhau, nhưng hiện tại, nhân vật đang hướng nội hơn là hướng ngoại và sở hữu một sức mạnh tuyệt vời bảo vệ cô ấy cho đến khi cô ấy tìm ra hướng để áp dụng nó.`,
+ meta_upright: `Do dự, lựa chọn, đình chiến, bế tắc, cảm xúc bị chặn`,
+ meta_reversed: `Do dự, nhầm lẫn, quá tải thông tin`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-2-swords-trong-tarot/`
+},
+{
+ name_card: `Ba thanh kiếm`,
+ number_card: 66,
+ img_card: `img/deck/66_Three_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này mô tả một trải nghiệm đau buồn khủng khiếp, có thể là ở dạng mất đi một mối quan hệ, cái chết do tai nạn hoặc một số tình trạng khó chịu khủng khiếp khác.`,
+ meta_upright: `Chia cách đau đớn, đau buồn đau lòng, đau buồn, từ chối`,
+ meta_reversed: `Xóa bỏ nỗi đau, lạc quan, tha thứ`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-3-swords-trong-tarot/`
+},
+{
+ name_card: `Tứ kiếm`,
+ number_card: 67,
+ img_card: `img/deck/67_Four_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Thanh kiếm duy nhất bên hông hiệp sĩ cho thấy mục đích duy nhất và sự tập trung cao độ trong cuộc sống. Nó chủ yếu được liên kết với một nơi yên bình, tĩnh lặng. Lá bài này phản ánh sự rút lui, bỏ đi và chuyển sự tập trung vào bên trong để quá trình phục hồi và chữa lành có thể diễn ra.`,
+ meta_upright: `Chiêm niệm, hồi phục, thụ động, thư giãn, nghỉ ngơi`,
+ meta_reversed: `Bồn chồn, kiệt sức, thiếu tiến bộ`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-4-swords-trong-tarot/`
+},
+{
+ name_card: `Năm thanh kiếm`,
+ number_card: 68,
+ img_card: `img/deck/68_Five_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `bầu trời trông rách rưới và "xé toạc" ám chỉ một thiên thể sờn rách, tồi tàn và lởm chởm. Lá bài này có thể đại diện cho sự tự tin thái quá một cách nguy hiểm, và ở dạng đảo ngược của nó biểu thị một sự tưởng chừng như chiến thắng mà cuối cùng sẽ là tai họa.`,
+ meta_upright: `Mâu thuẫn, căng thẳng, mất mát, thất bại, giành bằng mọi giá, phản bội`,
+ meta_reversed: `Cởi mở để thay đổi, quá khứ oán giận`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai- 5-swords-trong-tarot/`
+},
+{
+ name_card: `Sáu thanh kiếm`,
+ number_card: 69,
+ img_card: `img/deck/69_Six_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Đây là lá bài của Slough of Despairs. Nhân vật trong bức chân dung của lá bài phải đối mặt với một hành trình khó khăn, khi anh ta phải mang theo hành lý của quá khứ. Tuy nhiên, đó là một cuộc hành trình phải được thực hiện, và chúng ta nên vững lòng rằng phía bên kia đã có thời gian nghỉ ngơi.`,
+ meta_upright: `Sự chuyển đổi đáng tiếc nhưng cần thiết, nghi thức chuyển giao`,
+ meta_reversed: `Không thể đi tiếp, mang theo hành lý`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-6-swords-trong-tarot/`
+},
+{
+ name_card: `Bảy thanh kiếm`,
+ number_card: 70,
+ img_card: `img/deck/70_Seven_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Nhân vật trong bức chân dung của tấm thiệp trông chẳng có gì khác ngoài vẻ bề ngoài. Seven of Swords đại diện cho một quyết định vội vàng, tham lam và/hoặc hành vi thiếu suy nghĩ, cá nhân hành động một cách bốc đồng. Nó đại diện cho những kế hoạch bí mật, sự sỉ nhục ẩn giấu, sự thất vọng và khả năng thất bại.`,
+ meta_upright: `Bphản bội, lừa dối, lấy đi thứ gì đó, tàng hình`,
+ meta_reversed: `Thử thách tinh thần, bứt phá`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-7-swords-trong-tarot/`
+},
+{
+ name_card: `Tám thanh kiếm`,
+ number_card: 71,
+ img_card: `img/deck/71_Eight_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Eight of Swords đại diện cho một tình huống không thể nhìn thấy động thái tích cực nào. Vị trí của chúng tôi là vị trí của quân bài: nếu chúng tôi di chuyển, chúng tôi sẽ bị chém. Tuy nhiên, những sợi dây trói buộc chúng ta và cái bịt mắt chúng ta lại là nỗi sợ hãi của chính chúng ta, khiến chúng ta bất động. Vì vậy, càng ở lâu, chúng càng trói buộc và gài bẫy chúng ta.`,
+ meta_upright: `Cô lập, tự hạn chế, bỏ tù`,
+ meta_reversed: ` Mở ra những quan điểm mới, phát hành`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-8-swords-trong-tarot/`
+},
+{
+ name_card: `Chín thanh kiếm`,
+ number_card: 72,
+ img_card: `img/deck/72_Nine_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này liên quan nhiều đến tâm trí và những nghi ngờ cũng như nỗi đau của chúng ta. Hình bóng ngồi thao thức trên giường, bị tra tấn bởi những suy nghĩ treo lơ lửng trên đầu họ. Nhưng hãy lưu ý rằng lưỡi kiếm sắc bén có nghĩa là chúng cũng có thể giúp đỡ: vượt qua khó khăn của chúng ta và đưa ra giải pháp cho chúng ta, nếu chúng được xem xét đúng đắn.`,
+ meta_upright: `Trầm cảm, ác mộng, lo lắng dữ dội, tuyệt vọng`,
+ meta_reversed: `Vô vọng, trầm cảm nặng nề, dằn vặt`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-9-swords-trong-tarot/`
+},
+{
+ name_card: `Mười thanh kiếm`,
+ number_card: 73,
+ img_card: `img/deck/73_Ten_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Ten of Swords tượng trưng cho sự hủy diệt, bị kìm kẹp bởi vô số thứ hoặc tình huống. Hình ảnh nằm chết và bị đánh bại tượng trưng cho sự tuyệt vọng của chúng ta và cảm giác bị mắc kẹt bởi cảm xúc và nỗi thống khổ về tinh thần. Tuy nhiên, hãy vững lòng trước ánh bình minh vàng rực phía chân trời: mọi thứ cuối cùng cũng phải chuyển hướng theo chiều hướng tốt hơn.`,
+ meta_upright: `Đâm sau lưng, thất bại, khủng hoảng, phản bội, kết cục, mất mát`,
+ meta_reversed: `Phục hồi, tái sinh, lo sợ bị hủy hoại, kết thúc không thể tránh khỏi`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-10-swords-trong-tarot/`
+},
+{
+ name_card: `Trang kiếm`,
+ number_card: 74,
+ img_card: `img/deck/74_Page_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `The Swords là bộ của ý tưởng và lời nói. Page of Swords đại diện cho cách tiếp cận không sợ hãi đối với những suy nghĩ và vấn đề của chúng ta. Mặc dù nhân vật trong bức chân dung của lá bài đứng ngược chiều gió, nhưng ánh nhìn và mục đích của anh ta không hề chùn bước. Chúng ta hãy bắt chước anh ấy trong những thử thách của riêng mình.`,
+ meta_upright: `Nói nhiều, tò mò, tinh thần không ngừng nghỉ, tràn đầy năng lượng`,
+ meta_reversed: `Nói mà không làm, hấp tấp, lời hứa không thực hiện`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-page-swords-trong-tarot/`
+},
+{
+ name_card: `Hiệp sĩ kiếm`,
+ number_card: 75,
+ img_card: `img/deck/75_Knight_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `The Knight of Swords thường được dùng để đại diện cho một thanh niên tự tin và ăn nói lưu loát, người có thể hành động bốc đồng. Vấn đề là Hiệp sĩ này, mặc dù có tầm nhìn xa trông rộng, nhưng lại không thực tế. Anh ấy chiến đấu dũng cảm, nhưng ngu ngốc.`,
+ meta_upright: `Có ý kiến, vội vàng, định hướng hành động, giao tiếp`,
+ meta_reversed: `Suy nghĩ lung tung, coi thường hậu quả`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-knight-swords-trong-tarot/`
+},
+{
+ name_card: `Nữ hoàng kiếm`,
+ number_card: 76,
+ img_card: `img/deck/76_Queen_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Queen of Swords giơ tay về phía trước, biểu thị việc biến suy nghĩ của chúng ta thành hành động. Cô ấy là một nhà tư tưởng tự do và năng động, luôn giữ vững các ý tưởng và nguyên tắc của mình. Trái ngược với hầu hết bộ đồ của cô ấy, những đám mây trong bức chân dung của cô ấy rõ ràng và nguyên sơ, thể hiện tinh thần minh mẫn của cô ấy. Hãy để cô ấy mời chúng ta bắt chước cô ấy trong cuộc sống của chúng ta.`,
+ meta_upright: `Người suy nghĩ nhanh, có tổ chức, nhận thức sâu sắc, độc lập`,
+ meta_reversed: `Quá tình cảm, hư hỏng, lạnh lùng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-queen-swords-trong-tarot/`
+},
+{
+ name_card: `Vua kiếm`,
+ number_card: 77,
+ img_card: `img/deck/77_King_of_Swords.jpg`,
+orientation_card:[],
+ meta_description: `Lá bài này mô tả một người đàn ông có trái tim mạnh mẽ, quyết đoán và hướng đến trí tuệ. Tuy nhiên, The King of Swords cũng có thể là một người đàn ông tàn nhẫn hoặc phán xét quá mức; do đó, chúng ta nên cân bằng định hướng trí tuệ của mình_thẻ hiểu biết về cảm xúc.`,
+ meta_upright: `Suy nghĩ rõ ràng, sức mạnh trí tuệ, uy quyền, sự thật`,
+ meta_reversed: `Thao túng, chuyên chế, lạm dụng`,
+ meta_more_info_link: `https://tarot.vn/y-nghia-la-bai-king-swords-trong-tarot/`
+}
 ]
 const spread_position_description = [
   {
