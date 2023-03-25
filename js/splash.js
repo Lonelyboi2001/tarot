@@ -6,15 +6,15 @@ $(function() {
     drawnCards.push(rider_waite_cards[currentCardNumber]);
     const currentCard = rider_waite_cards[currentCardNumber];
     console.log(currentCard)
-    $('.card_image_here').append(`<img src="${currentCard.img}" id="${(drawnCards.length - 1)}" class="drawn_card" alt="${currentCard.name}" data-toggle="modal" data-target="#explanationModal">`);   
-    $('.card_title_here').text(`${currentCard.name}`)
+    $('.card_image_here').append(`<img src="${currentCard.img_card}" id="${(drawnCards.length - 1)}" class="drawn_card" alt="${currentCard.name_card}" data-toggle="modal" data-target="#explanationModal">`);   
+    $('.card_title_here').text(`${currentCard.name_card}`)
 })
 
 $(document).on("click",".drawn_card", function () {
     let clicked = $(this).attr('id');
-    $('.card_name_here').html(drawnCards[clicked].name);
-    $('.img_here').html(`<img class="drawn_card" src=${drawnCards[clicked].img} alt="${drawnCards[clicked].name}">`)
-    if (drawnCards[clicked].orientation === 1) {
+    $('.card_name_here').html(drawnCards[clicked].name_card);
+    $('.img_here').html(`<img class="drawn_card" src=${drawnCards[clicked].img_card} alt="${drawnCards[clicked].name_card}">`)
+    if (drawnCards[clicked].orientation_card === 1) {
       $(`modal_body`).find().children('img').addClass('flipped')
     }
     $('.reversed_meaning_here').text(drawnCards[clicked].meta_reversed);

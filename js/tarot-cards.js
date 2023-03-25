@@ -8,10 +8,10 @@ let goHome = function() {
 //Function to populate modal with clicked card information.
 $(document).on("click",".drawn_card", function () {
    let clicked = $(this).attr('id');
-   $('.card_name_here').html(drawnCards[clicked].name);
-   $('.img_here').html(`<img class="modal_card" src=${drawnCards[clicked].img} alt="${drawnCards[clicked].name}">`)
-   console.log(drawnCards[clicked].orientation)
-   if (drawnCards[clicked].orientation[0] === 1) {
+   $('.card_name_here').html(drawnCards[clicked].name_card);
+   $('.img_here').html(`<img class="modal_card" src=${drawnCards[clicked].img_card} alt="${drawnCards[clicked].name_card}">`)
+   console.log(drawnCards[clicked].orientation_card)
+   if (drawnCards[clicked].orientation_card[0] === 1) {
      $(`.img_here>img`).addClass('flipped')
    }
    $('.reversed_meaning_here').text(drawnCards[clicked].meta_reversed);
@@ -22,11 +22,11 @@ $(document).on("click",".drawn_card", function () {
 
 
 let determineOrientation = function(cardNumber) {
-  let orientation = Math.round((Math.random() * 1) + 0);
-  if (orientation === 1) {
-    rider_waite_cards[cardNumber].orientation.push(1)
+  let orientation_card = Math.round((Math.random() * 1) + 0);
+  if (orientation_card === 1) {
+    rider_waite_cards[cardNumber].orientation_card.push(1)
   } else {
-    rider_waite_cards[cardNumber].orientation.push(0)
+    rider_waite_cards[cardNumber].orientation_card.push(0)
   }
 }
 
@@ -35,8 +35,8 @@ let drawThree = function() {
   determineOrientation(currentCardNumber);
   drawnCards.push(rider_waite_cards[currentCardNumber]);
   if (drawnCards.length <= spread) {
-    $(`#rule_of_three`).find(`.${drawnCards.length}`).append(`<img src=${rider_waite_cards[currentCardNumber].img} id="${drawnCards.length - 1}" class="drawn_card" alt="${rider_waite_cards[currentCardNumber].name}" data-toggle="modal" data-target="#explanationModal">`)
-    if (rider_waite_cards[currentCardNumber].orientation[0] !== 0) {
+    $(`#rule_of_three`).find(`.${drawnCards.length}`).append(`<img src=${rider_waite_cards[currentCardNumber].img_card} id="${drawnCards.length - 1}" class="drawn_card" alt="${rider_waite_cards[currentCardNumber].name_card}" data-toggle="modal" data-target="#explanationModal">`)
+    if (rider_waite_cards[currentCardNumber].orientation_card[0] !== 0) {
       $(`#rule_of_three`).find(`.${drawnCards.length}`).children('img').addClass('flipped')
     }
   $(`#rule_of_three`).find(`.${drawnCards.length}_description`).text(spread_position_description[1].position_descriptions[drawnCards.length -1])
@@ -49,8 +49,8 @@ let drawTrueLove = function() {
   determineOrientation(currentCardNumber);
   drawnCards.push(rider_waite_cards[currentCardNumber]);
   if (drawnCards.length <= spread) {
-    $(`#true_love_spread`).find(`.${drawnCards.length}`).append(`<img src=${rider_waite_cards[currentCardNumber].img} id="${drawnCards.length - 1}" class="drawn_card" alt="${rider_waite_cards[currentCardNumber].name}" data-toggle="modal" data-target="#explanationModal">`)
-    if (rider_waite_cards[currentCardNumber].orientation[0] !== 0) {
+    $(`#true_love_spread`).find(`.${drawnCards.length}`).append(`<img src=${rider_waite_cards[currentCardNumber].img_card} id="${drawnCards.length - 1}" class="drawn_card" alt="${rider_waite_cards[currentCardNumber].name_card}" data-toggle="modal" data-target="#explanationModal">`)
+    if (rider_waite_cards[currentCardNumber].orientation_card[0] !== 0) {
       $(`#true_love_spread`).find(`.${drawnCards.length}`).children('img').addClass('flipped')
     }
     $(`#true_love_spread`).find(`.${drawnCards.length}_description`).text(spread_position_description[0].position_descriptions[drawnCards.length -1])
@@ -63,8 +63,8 @@ let drawSuccess = function() {
   determineOrientation(currentCardNumber);
   drawnCards.push(rider_waite_cards[currentCardNumber]);
   if (drawnCards.length <= spread) {
-    $(`#success_spread`).find(`.${drawnCards.length}`).append(`<img src=${rider_waite_cards[currentCardNumber].img} id="${drawnCards.length - 1}" class="drawn_card" alt="${rider_waite_cards[currentCardNumber].name}" data-toggle="modal" data-target="#explanationModal">`)
-    if (rider_waite_cards[currentCardNumber].orientation[0] !== 0) {
+    $(`#success_spread`).find(`.${drawnCards.length}`).append(`<img src=${rider_waite_cards[currentCardNumber].img_card} id="${drawnCards.length - 1}" class="drawn_card" alt="${rider_waite_cards[currentCardNumber].name_card}" data-toggle="modal" data-target="#explanationModal">`)
+    if (rider_waite_cards[currentCardNumber].orientation_card[0] !== 0) {
       $(`#success_spread`).find(`.${drawnCards.length}`).children('img').addClass('flipped')
     }
   $(`#success_spread`).find(`.${drawnCards.length}_description`).text(spread_position_description[2].position_descriptions[drawnCards.length -1])
