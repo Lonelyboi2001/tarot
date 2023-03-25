@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Slabo+27px');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  background-color: #D4E5EB;
+  font-family: 'Roboto Slab', serif;
+  height:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+}
+
+.modal_card {
+    height:70%;
+    width:70%;
+    display: flex;
+    align-items: center;ß
+    justify-content: center;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:0.5em;
+}
+
+.drawn_card {
+  max-height:194px;
+  max-width:112px;
+  display:flex;
+  margin-left:.01em;
+  margin-right:.01em;
+  margin-bottom:auto;
+  border-radius:10px;
+  margin-top:0.01em;
+}
+
+.flipped {
+    transform: rotate(180deg);
+}
+
+.drawn_card:hover {
+  cursor:pointer;
+}
+
+.header > h1:hover {
+  cursor:pointer;
+}
+/*Style for the text above the cards*/
+.card_position {
+    font-weight:bold;
+    font-size:.7em;
+    max-width:109px;
+    text-align:center;
+    margin-bottom:0;
+    margin-top:0;
+}
+
+.wrapper {
+  flex-grow:1;
+  display:grid;
+  grid-row-gap:0;
+  grid-template-areas:
+  "header"
+  "spread_selection"
+  "deck"
+  "spreads"
+  "footer"
+}
+
+.header {
+  grid-area:header;
+  margin:1em;
+}
+
+.rule_of_three {
+    grid-area: rule_of_three;
+}
+
+.true_love {
+    grid-area:true_love;
+}
+
+.success {
+    grid-area:success;
+}
+
+.deckspot {
+    grid-area:deck;
+}
+
+.spread_display {
+    grid-area:spreads;
+}
+
+.footer {
+  grid-area: footer;
+  text-align:center;
+}
+
+.header {
+    grid-row: 1;
+    text-align:center;
+  }
+
+#spread_selection {
+    grid-row-start:2;
+    display:grid;
+    grid-row-gap:none;
+    grid-template-areas:
+    "rule_of_three"
+    "true_love"
+    "success"
+}
+#spread_selection > div > p {
+    font-size: .75em;
+    font-weight: lighter;
+    font-style:italic;
+    padding-left:1em;
+    padding-right:1em;
+}
+
+#spread_selection > div > h6 {
+    padding-left:.7em;
+    padding-right:.5em;
+    padding-top:.3em;
+}
+
+#spread_selection > div:hover {
+    cursor:pointer;
+}
+
+#spread_selection > div:nth-child(odd) {
+    background-color: #bfced3;
+}
+
+
+#deck_here {
+    display:none;
+}
+
+#deck_area {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+}
+
+.deck {
+    margin-top:2.5em;
+    height: 25%;
+    width:25%;
+    border-radius: 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.deck::after {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.deck:hover {
+    cursor:pointer;
+    -webkit-transform: scale(1.25, 1.25);
+    transform: scale(1.25, 1.25);
+}
+
+.deck:hover::after {
+    opacity: 1;
+}
+
+#rule_of_three {
+    margin:.5em;
+    grid-gap:.75em;
+    display:grid;
+    grid-template-columns: 1 1 1;
+    grid-template-areas:
+    "firstd secondd thirdd"
+    "first second third"
+
+}
+
+#rule_of_three [class="1"] {
+    grid-area: first;
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rule_of_three [class="2"] {
+    grid-area: second;
+    grid-column:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rule_of_three [class="3"]  {
+    grid-area: third;
+    grid-column:3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rule_of_three > p [class="1_description"] {
+    grid-area: firstd;
+    grid-column:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rule_of_three > p [class="2_description"] {
+    grid-area: secondd;
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rule_of_three > p [class="3_description"] {
+    grid-area: thirdd;
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#true_love_spread {
+    margin:.5em;
+    grid-gap:.5em;
+    display:inline-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "first second"
+    "third fourth fifth"
+    "sixth"
+}
+
+#tl_first_card {
+    grid-area:first;
+    grid-row: 1;
+    grid-column: 1/2;
+
+}
+
+#tl_second_card {
+    grid-area:second;
+    grid-row:1;
+    grid-column:3/4;
+
+}
+
+#tl_third_card   {
+    grid-area:third;
+    grid-column: 1;
+    grid-row:2;
+
+}
+
+#tl_fourth_card {
+    grid-area:fourth;
+    grid-column:2;
+    grid-row:2;
+
+}
+
+#tl_fifth_card {
+    grid-area:fifth;
+    grid-column:3;
+    grid-row:2;
+}
+
+#tl_sixth_card {
+    grid-area:sixth;
+    grid-row:3;
+    grid-column:2;
+
+}
+
+#tl_first_card, #tl_second_card, #tl_third_card, #tl_fourth_card, #tl_fifth_card, #tl_sixth_card > img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tl_first_card, #tl_second_card, #tl_third_card, #tl_fourth_card, #tl_fifth_card, #tl_sixth_card > p {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    padding:0;
+}
+
+#success_spread {
+    display:grid;
+    margin:.5em;
+    grid-gap:.5em;
+    display:inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "fourth"
+    "second first third"
+    "fifth";
+}
+
+#suc_first {
+    grid-area:first;
+    grid-row: 2;
+    grid-column: 2;
+
+}
+
+#suc_second {
+    grid-area:second;
+    grid-row:2;
+    grid-column:1;
+
+}
+
+#suc_third   {
+    grid-area:third;
+    grid-column: 3;
+    grid-row:2;
+
+}
+
+#suc_fourth {
+    grid-area:fourth;
+    grid-column:1;
+    grid-row:1;
+}
+
+#suc_fifth {
+    grid-area:fifth;
+    grid-column:1;
+    grid-row:3;
+}
+
+#suc_first, #suc_second, #suc_third, #suc_fourth, #suc_fifth > img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#suc_first, #suc_second, #suc_third, #suc_fourth, #suc_fifth > p {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    padding:0;
+}
+
+.new_reading_button {
+  display:none;
+  margin:1em;
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+/* Styles */
+}
