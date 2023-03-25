@@ -112,7 +112,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 #spread_selection > div > p {
     font-size: .75em;
-    font-weight: lighter;
     font-style:italic;
     padding-left:1em;
     padding-right:1em;
@@ -164,8 +163,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .deck:hover {
     cursor:pointer;
-    -webkit-transform: scale(1.25, 1.25);
-    transform: scale(1.25, 1.25);
 }
 
 .deck:hover::after {
