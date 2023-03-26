@@ -1,14 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel|Slabo+27px');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  :root {
+    --card-height: 20px;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+  
 
 body {
-  background-color: #D4E5EB;
+  background-image: url('../img/background.png');
+  background-size: cover; 
   font-family: 'Roboto Slab', serif;
+  color: white;
   height:100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
+}
+
+.modal-content {
+    color: black;
 }
 
 .modal_card {
@@ -55,6 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
+    margin-top: 80px;
   flex-grow:1;
   display:grid;
   grid-row-gap:0;
@@ -89,6 +106,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .spread_display {
     grid-area:spreads;
+    display: flex;
+    justify-content: center;
 }
 
 .footer {
@@ -102,13 +121,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 #spread_selection {
-    grid-row-start:2;
-    display:grid;
-    grid-row-gap:none;
-    grid-template-areas:
-    "rule_of_three"
-    "true_love"
-    "success"
+    display: flex;
+    justify-content: center;
+    gap: 40px;
 }
 #spread_selection > div > p {
     font-size: .75em;
@@ -123,14 +138,23 @@ h1, h2, h3, h4, h5, h6 {
     padding-top:.3em;
 }
 
+#spread_selection > div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all .5s ease-in-out;
+}
+
+#spread_selection .title-img {
+    width: 200px;
+    border-radius: 15px;
+}
+
 #spread_selection > div:hover {
     cursor:pointer;
+    transform: scale(1.1);
 }
-
-#spread_selection > div:nth-child(odd) {
-    background-color: #bfced3;
-}
-
 
 #deck_here {
     display:none;
@@ -144,9 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .deck {
-    margin-top:2.5em;
-    height: 25%;
-    width:25%;
+    height: 250px;
     border-radius: 15px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -232,11 +254,6 @@ h1, h2, h3, h4, h5, h6 {
     margin:.5em;
     grid-gap:.5em;
     display:inline-grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    "first second"
-    "third fourth fifth"
-    "sixth"
 }
 
 #tl_first_card {

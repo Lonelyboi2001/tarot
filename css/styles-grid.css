@@ -2,13 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-  background-color: #D4E5EB;
+  background-image: url('../img/background.png');
+  background-size: cover; 
   font-family: 'Roboto Slab', serif;
+  color: white;
+  height:100%;
   margin:1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
+}
+
+.modal-content {
+  color: black;
 }
 
 .header > h1:hover {
@@ -56,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
+  margin-top: 80px;
   display:grid;
   grid-gap:1em;
   grid-template-areas:
