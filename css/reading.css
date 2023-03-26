@@ -23,6 +23,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
 }
 
+h1{
+    font-weight: 300;
+}
+
 .modal-content {
     color: black;
 }
@@ -252,8 +256,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #true_love_spread {
     margin:.5em;
-    grid-gap:.5em;
-    display:inline-grid;
+    display: flex;
+    gap: 40px
 }
 
 #tl_first_card {
@@ -312,15 +316,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #success_spread {
-    display:grid;
+    display:flex;
     margin:.5em;
-    grid-gap:.5em;
-    display:inline-grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-    "fourth"
-    "second first third"
-    "fifth";
+    gap: 40px; 
 }
 
 #suc_first {

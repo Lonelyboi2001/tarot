@@ -784,7 +784,7 @@ orientation_card:[],
 const spread_position_description = [
   {
     name: `true_love`,
-    position_descriptions: [`Con đang cảm thấy thế nào`, `Ny con cảm thấy sao`, `Thứ gì đang kết nối hai con`, `Điều gì đã giúp hai con bên nhau`, `Vấn đề hiện tại của các con`, `Con nên làm gì`]
+    position_descriptions: [`Con đang cảm thấy thế nào`, `Ny con cảm thấy sao`, `Thứ gì đang kết nối hai con`, `Điều gì đã giúp hai con bên nhau`, `Vấn đề hiện tại của các con`, `Con nên làm gì để thay đổi`]
   },
   {
     name: `rule_of_three`,
@@ -792,6 +792,6 @@ const spread_position_description = [
   },
   {
     name: `success`,
-    position_descriptions: [`Nguồn gốc vấn đề`, `Thử thách hiện tại`, `Những vấn đề cơ bản`, `Thứ gì có thể giúp con`, `Con cần làm gì đê thành công`]
+    position_descriptions: [`Nguồn gốc vấn đề của con`, `Thử thách hiện tại của con`, `Những vấn đề cơ bản của con`, `Thứ gì có thể giúp con`, `Con cần làm gì đê thành công`]
   }
 ]
