@@ -383,3 +383,134 @@ h1{
 @media only screen  and (min-width : 1224px) {
 /* Styles */
 }
+
+.tarot-boy {
+	position: absolute;
+	left: calc(50% - 125px);
+    top: calc(50% - 125px);
+    z-index: -1;
+    transform: scale(1.5);	
+}
+.tarot-card__icon {
+	width: 250px;
+	height: 250px;
+}
+.tarot-card__white-group {
+	opacity: 0;
+	transform: scale(0.6);
+	transform-origin: 50% 50%;
+	animation: fade-in-white-elements 4s ease-out forwards;
+}
+.tarot-card__white-group-rotate {
+	transform-origin: 50% 50%;
+	animation: rotate-white-elements 180s linear infinite;
+}
+.tarot-card__white-element {
+	fill: none;
+	stroke: #FFFFFF;
+	stroke-width: 2.8347;
+	stroke-miterlimit: 5;
+}
+.tarot-card__white-element--radius-line {
+	stroke-dasharray: 83.6;
+	stroke-dashoffset: 83.6;
+	animation: draw-line 1.5s 2s ease-out forwards;
+}
+.tarot-card__white-element--triangle {
+	stroke-dasharray: 284.291;
+	stroke-dashoffset: 284.291;
+	animation: draw-line 3s 1s ease-out forwards;	
+}
+.tarot-card__white-element--circle {
+	stroke-dasharray: 1042.37;
+	stroke-dashoffset: 0;
+	transform-origin: 50% 50%;
+	animation: draw-dasharray 100s 6s linear infinite;
+}
+.tarot-card__gold-group--animated {
+	transform-origin: 50% 50%;
+	animation: rotate-rocking 4.1s cubic-bezier(.6, 0, .4, 1) alternate infinite;
+}
+.tarot-card__gold-element {
+	fill: none;
+	stroke: #AD9964;
+	stroke-width: 2.8347;
+	stroke-miterlimit: 10;
+}
+.tarot-card__gold-element--line-top {
+	stroke-dasharray: 54.969;
+	stroke-dashoffset: 54.969;
+	animation: draw-line 4.6s 5.4s ease-out forwards;
+}
+.tarot-card__gold-element--line-midtop {
+	stroke-dasharray: 95.695;
+	stroke-dashoffset: 95.695;
+	animation: draw-line 4.6s 5.4s ease-out forwards;
+}
+.tarot-card__gold-element--line-mid {
+	stroke-dasharray: 132.229;
+	stroke-dashoffset: 132.229;
+	animation: draw-line 4.6s 5.4s ease-out forwards;
+}
+.tarot-card__gold-element--inward-curve {
+	stroke-dasharray: 197.48;
+	stroke-dashoffset: 197.48;
+	animation: draw-line 4.6s 5.4s ease-out forwards;
+}
+.tarot-card__gold-element--star-horizonal {
+	stroke-dasharray: 124.5;
+	stroke-dashoffset: 124.5;
+	animation: draw-line 4.6s 5.4s ease-out forwards;
+}
+.tarot-card__gold-element--star-diagonal {
+	stroke-dasharray: 92.985;
+	stroke-dashoffset: 92.985;
+	animation: draw-line 4.6s 5.4s ease-out forwards;
+}
+.tarot-card__gold-element--star-vertical {
+	stroke-dasharray: 82.689;
+	stroke-dashoffset: 82.689;
+	animation: draw-line 4.6s 5.4s ease-out forwards;
+}
+.tarot-card__gold-element--circle {
+	opacity: 0;
+	transform: scale(0.5);
+	transform-origin: 50% 50%;
+	animation: fade-in-gold-circle 2.6s 3s ease-out forwards;
+}
+.tarot-card__gold-petals-group {
+	opacity: 0;
+	transform-origin: 50% 50%;
+	animation: fade-in 2.6s 4s ease-in forwards;
+}
+.tarot-card__gold-element--petal {
+	stroke-linecap: round;
+	stroke-dasharray: 54.969;
+	stroke-dashoffset: 54.969;
+	animation: draw-line 2.6s 4s ease-out forwards;
+}
+@keyframes fade-in-white-elements {
+	to { opacity: 0.4; transform: scale(1); }
+}
+@keyframes rotate-white-elements {
+	to { transform: rotate(-360deg); }
+}
+@keyframes fade-in-gold-circle {
+	to { opacity: 1; transform: scale(1); }
+}
+@keyframes draw-line {
+	to { stroke-dashoffset: 0; }
+}
+@keyframes fade-in {
+	to { opacity: 1; }
+}
+@keyframes rotate-rocking {
+	0% { transform: rotate(6deg); }
+	100% { transform: rotate(-6deg); }
+}
+@keyframes draw-dasharray {
+	0% { stroke-dasharray: 1042.37; transform: rotate(-0deg) }
+	40% { stroke-dasharray: 160; }
+	80% { stroke-dasharray: 1042.37; }
+	100% { stroke-dasharray: 1042.37; transform: rotate(-720deg); }
+}
