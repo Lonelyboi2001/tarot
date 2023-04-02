@@ -108,12 +108,6 @@ h1{
     grid-area:deck;
 }
 
-.spread_display {
-    grid-area:spreads;
-    display: flex;
-    justify-content: center;
-}
-
 .footer {
   grid-area: footer;
   text-align:center;
@@ -146,7 +140,6 @@ h1{
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
     transition: all .5s ease-in-out;
 }
 
@@ -197,37 +190,9 @@ h1{
 
 #rule_of_three {
     margin:.5em;
-    grid-gap:.75em;
-    display:grid;
-    grid-template-columns: 1 1 1;
-    grid-template-areas:
-    "firstd secondd thirdd"
-    "first second third"
-
-}
-
-#rule_of_three [class="1"] {
-    grid-area: first;
-    grid-column: 1;
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-#rule_of_three [class="2"] {
-    grid-area: second;
-    grid-column:2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#rule_of_three [class="3"]  {
-    grid-area: third;
-    grid-column:3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 50px;
 }
 
 #rule_of_three > p [class="1_description"] {
@@ -257,7 +222,8 @@ h1{
 #true_love_spread {
     margin:.5em;
     display: flex;
-    gap: 40px
+    justify-content: center;
+    gap: 40px;
 }
 
 #tl_first_card {
@@ -318,6 +284,7 @@ h1{
 #success_spread {
     display:flex;
     margin:.5em;
+    justify-content: center;
     gap: 40px; 
 }
 
